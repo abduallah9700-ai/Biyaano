@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biyaano Architects — Luxury Spatial & Architectural Design</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ["'Cormorant Garamond'", 'Georgia', 'serif'],
+            sans: ["'Inter'", 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            gold: '#B8864E',
+            'dark-bg': '#0A0A0A',
+            'card-bg': '#141414',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/css">
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2A2A2A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B8864E;
+    }
+
+    /* Selection overlay */
+    ::selection {
+      background: #B8864E;
+      color: #0A0A0A;
+    }
+
+    /* IntersectionObserver Fade In */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hover interactions */
+    .service-card {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 0px solid transparent;
+      border-radius: 12px;
+    }
+    .project-item-card .relative {
+      border-radius: 12px;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-left: 3px solid #B8864E;
+    }
+
+    /* Fancy Nav Underline on Hover */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: #B8864E;
+      transform-origin: bottom right;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  </style>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased overflow-x-hidden">
+
+  <!-- 1. STICKY NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A] border-b border-[#1A1A1A] transition-all duration-300 py-5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      
+      <!-- Logo Wordmark -->
+      <a href="#hero" class="flex items-center gap-1 group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" class="w-[180px] h-auto" fill="none">
+          <defs>
+            <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8E673A" />
+              <stop offset="40%" stop-color="#D1A764" />
+              <stop offset="60%" stop-color="#F2D18F" />
+              <stop offset="80%" stop-color="#C59C5E" />
+              <stop offset="100%" stop-color="#734E24" />
+            </linearGradient>
+          </defs>
+          <g fill="url(#navLogoGradient)">
+            <!-- 'b' - tall stem with gap or chamfered custom logo shapes -->
+            <path d="M 20,10 L 32,10 L 32,60 C 32,60 38,52 48,52 C 60,52 68,62 68,76 L 68,95 L 56,95 L 56,76 C 56,69 51,64 45,64 C 39,64 32,69 32,76 L 32,95 L 20,95 L 20,10 Z" />
+            <!-- 'i' - short stem with slanted block dot -->
+            <path d="M 78,55 L 90,55 L 90,95 L 78,95 Z" />
+            <polygon points="78,45 90,38 90,46 78,53" />
+            <!-- 'y' -->
+            <path d="M 100,55 L 112,55 L 112,85 C 112,92 117,95 125,95 C 129,95 132,94 135,92 L 135,108 C 130,111 121,112 114,112 C 103,112 100,105 100,95 L 100,55 Z" />
+            <!-- 'a' -->
+            <path d="M 145,55 L 157,55 L 157,62 C 161,56 168,52 176,52 C 188,52 195,60 195,73 L 195,95 L 183,95 L 183,73 C 183,67 178,63 172,63 C 165,63 157,68 157,75 L 157,95 L 145,95 Z" />
+            <!-- 'a' -->
+            <path d="M 205,55 L 217,55 L 217,62 C 221,56 228,52 236,52 C 248,52 255,60 255,73 L 255,95 L 243,95 L 243,73 C 243,67 238,63 232,63 C 225,63 217,68 217,75 L 217,95 L 205,95 Z" />
+            <!-- 'n' -->
+            <path d="M 265,55 L 277,55 L 277,62 C 281,56 288,52 296,52 C 308,52 315,60 315,73 L 315,95 L 303,95 L 303,73 C 303,67 298,63 292,63 C 285,63 277,68 277,75 L 277,95 L 265,95 Z" />
+            <!-- 'o' -->
+            <path d="M 335,52 C 352,52 362,64 362,76 C 362,88 352,98 335,98 C 318,98 308,88 308,76 C 308,64 318,52 335,52 Z M 335,64 C 326,64 321,70 321,76 C 321,82 326,88 335,88 C 344,88 349,82 349,76 C 349,70 344,64 335,64 Z" />
+          </g>
+          <text x="180" y="123" font-family="'Inter', sans-serif" font-weight="300" font-size="20" letter-spacing="4" fill="url(#navLogoGradient)">architects</text>
+        </svg>
+      </a>
+
+      <!-- Navigation Links (Desktop) -->
+      <div class="hidden md:flex items-center gap-10">
+        <a href="#hero" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Home</a>
+        <a href="#services" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Services</a>
+        <a href="#projects" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Projects</a>
+        <a href="#about" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Studio</a>
+        <a href="#contact" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button id="menu-btn" class="block md:hidden text-white focus:outline-none z-50">
+        <svg id="menu-icon" class="w-6 h-6 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full xs:w-80 bg-[#0E0E0E] border-l border-[#1A1A1A] z-40 transform translate-x-full transition-transform duration-500 ease-out flex flex-col justify-center px-12 gap-8 shadow-2xl">
+      <a href="#hero" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Home</a>
+      <a href="#services" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Services</a>
+      <a href="#projects" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Projects</a>
+      <a href="#about" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Studio</a>
+      <a href="#contact" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Contact</a>
+      
+      <div class="mt-8 border-t border-[#222] pt-8 text-[11px] text-gray-500 uppercase tracking-widest flex flex-col gap-2">
+        <span>© 2026 Biyaano Architects</span>
+        <span>Mogadishu • Taleex-KM4</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. HERO -->
+  <section id="hero" class="relative min-h-screen flex flex-col justify-between items-center bg-[#070707] overflow-hidden pt-28 pb-10">
+    <!-- Huge background img -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-[#0A0A0A]/55 to-[#0A0A0A]/90 z-10"></div>
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80" alt="Biyaano Landmark Pool Villa" class="w-full h-full object-cover scale-[1.02] transform transition-transform duration-[10s] brightness-[0.65] contrast-[1.05]" style="animation: slowPan 25s infinite alternate;" referrerPolicy="no-referrer">
+    </div>
+
+    <style>
+      @keyframes slowPan {
+        0% { transform: scale(1.02) translate(0px, 0px); }
+        100% { transform: scale(1.08) translate(-10px, -15px); }
+      }
+    </style>
+
+    <!-- Spacer top for flex vertical alignment -->
+    <div class="h-4 w-full"></div>
+
+    <div class="relative z-20 max-w-5xl mx-auto px-6 text-center my-auto py-6">
+      <!-- Minimalist Tagline -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="h-[1px] w-6 bg-gold/30"></span>
+        <p class="text-[10px] sm:text-[11px] text-gold uppercase tracking-[0.45em] font-medium">Visionary Spatial Artistry</p>
+        <span class="h-[1px] w-6 bg-gold/30"></span>
+      </div>
+      
+      <!-- Majestic Heading -->
+      <div class="relative inline-block mb-10 w-full max-w-[280px] sm:max-w-[420px] md:max-w-[500px] mx-auto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 340 140"
+          class="w-full h-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="heroLogoBronze" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#8E673A" />
+              <stop offset="40%" stopColor="#D1A764" />
+              <stop offset="60%" stopColor="#F2D18F" />
+              <stop offset="80%" stopColor="#C59C5E" />
+              <stop offset="100%" stopColor="#734E24" />
+            </linearGradient>
+          </defs>
+          <g fill="url(#heroLogoBronze)" fillRule="evenodd">
+            <!-- b -->
+            <path d="M 15 25 L 25 15 L 25 50 L 55 50 L 55 85 L 45 95 L 15 95 Z M 25 60 L 45 60 L 45 80 L 40 85 L 25 85 Z" />
+            <!-- i -->
+            <path d="M 65 60 L 75 50 L 75 95 L 65 95 Z" />
+            <path d="M 65 38 L 73 30 L 83 30 L 75 38 Z" />
+            <!-- y -->
+            <path d="M 85 50 L 95 50 L 95 85 L 105 85 L 105 50 L 115 50 L 115 105 L 105 115 L 105 95 L 95 95 L 85 85 Z" />
+            <!-- a -->
+            <path d="M 125 60 L 135 50 L 165 50 L 165 95 L 125 95 Z M 135 60 L 155 60 L 155 80 L 150 85 L 135 85 Z" />
+            <!-- a -->
+            <path d="M 175 60 L 185 50 L 215 50 L 215 95 L 175 95 Z M 185 60 L 205 60 L 205 80 L 200 85 L 185 85 Z" />
+            <!-- n -->
+            <path d="M 225 50 L 255 50 L 265 60 L 265 95 L 255 95 L 255 65 L 235 65 L 235 95 L 225 95 Z" />
+            <!-- o -->
+            <path d="M 285 50 L 305 50 L 315 60 L 315 85 L 305 95 L 285 95 L 275 85 L 275 60 Z M 290 60 L 300 60 L 305 65 L 305 80 L 300 85 L 290 85 L 285 80 L 285 65 Z" />
+          </g>
+          <text
+            x="122"
+            y="122"
+            font-family="'Inter', sans-serif"
+            font-weight="400"
+            font-size="20"
+            letter-spacing="5.5"
+            fill="url(#heroLogoBronze)"
+            class="uppercase"
+          >
+            architects
+          </text>
+        </svg>
+      </div>
+      
+      <!-- Subtitle -->
+      <p class="text-sm sm:text-lg text-gray-400 font-sans font-light tracking-[0.05em] max-w-2xl mx-auto mb-12 leading-relaxed text-center">
+        At Biyaano Architecture, we turn ideas into inspiring spaces. We blend innovation with practicality to create timeless architectural solutions.
+      </p>
+
+      <!-- CTA Button (Gold Line Style) -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#projects" class="group relative px-8 py-4 border border-gold uppercase text-[11px] font-sans tracking-[0.25em] hover:text-black font-semibold transition-colors duration-500 overflow-hidden rounded-lg">
+          <span class="absolute inset-y-0 left-0 w-0 bg-gold transition-all duration-500 group-hover:w-full z-[-1] rounded-lg"></span>
+          Explore Portfolio
+        </a>
+        <a href="#contact" class="px-8 py-4 uppercase text-[11px] font-sans tracking-[0.25em] text-gray-400 hover:text-white transition-colors duration-300 border border-transparent hover:border-gray-800 rounded-lg">
+          Enquire Space
+        </a>
+      </div>
+    </div>
+    
+    <!-- Mouse scroll indicator -->
+    <div class="relative z-20 flex flex-col items-center gap-2 text-gray-500 mt-auto pb-4">
+      <span class="text-[9px] uppercase tracking-[0.3em]">scroll</span>
+      <div class="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES -->
+  <section id="services" class="py-24 bg-dark-bg border-t border-[#111]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="fade-in-section flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+        <div>
+          <span class="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3">Our Expertise</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide">Composing Elements</h2>
+        </div>
+        <p class="text-sm text-gray-400 max-w-md font-light leading-relaxed">
+          Through deliberate architectural and interior disciplines, we forge exceptional spaces tailored with materials of eternal distinction.
+        </p>
+      </div>
+
+      <!-- Services 3x2 Grid (6 Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Service 1 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">Architectural Design</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Designing spatial monuments. Sculptural silhouettes, grand layouts, and master-planned layouts designed to exist forever.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Core Discipline</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="3" y1="15" x2="21" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">Interior & Exterior Design</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Crafting seamless spatial flow. Luxury stones, custom cladding, architectural bronze, and spatial lighting integration.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Form & Texture</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <polygon points="12 2 2 7 12 12 22 7 12 2 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">Facade & Historic Curation</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Restoring vintage masonry with high-performance glass-steel additions, custom brass accents, and structural modern integrity.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Heritage Craft</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M 4,4 L 10,4 L 10,20 L 4,20 Z" />
+                <path d="M 14,4 L 20,4 L 20,20 L 14,20 Z" />
+                <line x1="10" y1="12" x2="14" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">MEP Design</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Advanced technical choreography. Fully-integrated, silent hydronic climate conduits, luxury low-voltage lighting grids, and eco-systems.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Engineering</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="2.1"></rect>
+                <path d="M7 2v20M17 2v20M2 7h20M2 17h20"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">3D Visualization</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Photorealistic light simulations. Immersive, optical-trace accurate ray calculations, landscape animations, and virtual projections.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Cinematic Render</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="fade-in-section service-card bg-card-bg p-8 md:p-10 flex flex-col justify-between h-[340px] border border-[#1E1E1E]">
+          <div>
+            <div class="text-gold mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 22h20L12 2z"></path>
+                <circle cx="12" cy="13" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-white font-medium mb-4">Landscape Design</h3>
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Crafting minimal natural gardens. Clean sculpture elements, low overflow pools, bespoke water trails, and ambient sunset alignments.
+            </p>
+          </div>
+          <div class="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+            <span>Biophilic Harmony</span>
+            <span class="w-6 h-[1px] bg-gold/50"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CLIENTS CAROUSEL -->
+  <section class="relative py-24 text-white overflow-hidden border-t border-[#151515] bg-[#0A0A0A]">
+    <!-- Organic Structural background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black z-10"></div>
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80" alt="Parametric Architecture Backing" class="w-full h-full object-cover opacity-[0.25] blur-[1px]" referrerPolicy="no-referrer">
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-gold text-[11px] uppercase tracking-[0.3em] font-semibold mb-3 block">Esteemed Collaborators</span>
+        <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide animate-none">Featured Clients</h2>
+        <div class="w-12 h-[1px] bg-gold/30 mx-auto mt-6"></div>
+      </div>
+
+      <!-- Carousel Frame Wrapper -->
+      <div class="relative group">
+        <!-- Arrow Buttons -->
+        <button onclick="scrollClients('left')" class="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/85 hover:bg-gold text-[#888] hover:text-black transition-all duration-300 rounded-full border border-gold/15 hover:border-transparent focus:outline-none cursor-pointer shadow-lg animate-none" title="Previous Clients">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <button onclick="scrollClients('right')" class="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/85 hover:bg-gold text-[#888] hover:text-black transition-all duration-300 rounded-full border border-gold/15 hover:border-transparent focus:outline-none cursor-pointer shadow-lg animate-none" title="Next Clients">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <!-- Scrolling client list -->
+        <div id="clients-slider" class="flex gap-4 md:gap-5 overflow-x-auto scroll-smooth py-4 px-1" style="scrollbar-width: none; -ms-overflow-style: none;">
+          
+          <!-- Client 1 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <svg class="w-12 h-6 text-gold/80 mb-1" fill="none" stroke="currentColor" stroke-dasharray="" stroke-width="2" viewBox="0 0 24 12">
+                <circle cx="4" cy="6" r="1.5" class="fill-gold/40"></circle>
+                <circle cx="12" cy="3" r="1.5" class="fill-gold/40"></circle>
+                <circle cx="12" cy="9" r="1.5" class="fill-gold/40"></circle>
+                <circle cx="20" cy="6" r="1.5" class="fill-gold/40"></circle>
+                <line x1="4" y1="6" x2="12" y2="3" stroke-width="1"></line>
+                <line x1="4" y1="6" x2="12" y2="9" stroke-width="1"></line>
+                <line x1="12" y1="3" x2="20" y2="6" stroke-width="1"></line>
+                <line x1="12" y1="9" x2="20" y2="6" stroke-width="1"></line>
+                <line x1="12" y1="3" x2="12" y2="9" stroke-width="1"></line>
+              </svg>
+              <span class="text-[7px] text-white/80 font-semibold leading-tight font-sans">سلطة واحة دبي للسيليكون</span>
+              <span class="text-[5px] text-white/40 uppercase tracking-[0.1em]">Dubai Silicon Oasis Authority</span>
+            </div>
+          </div>
+
+          <!-- Client 2 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex items-center justify-center select-none">
+              <span class="text-xl font-black tracking-tighter text-gold font-mono">DU</span>
+              <span class="text-xl font-black tracking-tighter text-white/90 font-mono">B</span>
+              <span class="text-xl font-black tracking-tighter text-gold font-mono">A</span>
+              <span class="text-xl font-black tracking-tighter text-white/90 font-mono">I</span>
+            </div>
+          </div>
+
+          <!-- Client 3 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <div class="grid grid-cols-2 gap-1 w-6 h-6 rotate-45 mb-1.5 animate-none mx-auto">
+                <div class="w-2.5 h-2.5 bg-gold"></div>
+                <div class="w-2.5 h-2.5 bg-gold/70"></div>
+                <div class="w-2.5 h-2.5 bg-gold/45"></div>
+                <div class="w-2.5 h-2.5 bg-gold/[0.15]"></div>
+              </div>
+              <span class="text-[7px] text-white/80 font-bold leading-none uppercase tracking-[0.05em]">Dubai Properties</span>
+              <span class="text-[5px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Group</span>
+            </div>
+          </div>
+
+          <!-- Client 4 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <div class="flex items-end gap-0.5 mb-1 justify-center">
+                <div class="w-1.5 h-4 bg-gold"></div>
+                <div class="w-2.5 h-5 bg-gold/80 rounded-t-sm"></div>
+                <div class="w-1.5 h-3 bg-white/60"></div>
+                <div class="w-3 h-4 bg-white/30"></div>
+              </div>
+              <span class="text-[6px] text-white/90 font-extrabold leading-none">مدينة الملك عبدالله</span>
+              <span class="text-[5px] text-gold uppercase tracking-[0.05em] leading-none mt-0.5">Economic City</span>
+            </div>
+          </div>
+
+          <!-- Client 5 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <svg class="w-10 h-7 text-gold mb-1" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 16">
+                <path d="M4 14V2l8 8 8-8v12"></path>
+                <line x1="12" y1="10" x2="12" y2="15"></line>
+              </svg>
+              <span class="text-[8px] text-white/80 uppercase tracking-[0.3em] font-sans font-bold">Meraas</span>
+            </div>
+          </div>
+
+          <!-- Client 6 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <svg class="w-8 h-8 text-gold mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"></path>
+                <path d="M12 22V12"></path>
+                <path d="M12 12l8-5M12 12L4 7"></path>
+                <circle cx="12" cy="12" r="3" class="fill-gold/10 text-gold"></circle>
+              </svg>
+              <span class="text-[7px] text-white/95 font-extrabold leading-none">وزارة الإسكان</span>
+              <span class="text-[5px] text-white/40 uppercase tracking-wider mt-0.5">Ministry of Housing</span>
+            </div>
+          </div>
+
+          <!-- Client 7 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <div class="relative font-sans text-xs font-black tracking-[0.18em] text-white">
+                OMNIYAT
+                <span class="absolute right-[1px] top-0 text-[5px] text-gold font-bold">•</span>
+              </div>
+              <span class="text-[4px] text-white/40 uppercase tracking-[0.4em] mt-0.5">The Art of Elevation</span>
+            </div>
+          </div>
+
+          <!-- Client 8 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <div class="flex flex-col items-center leading-none mb-1">
+                <div class="w-4 h-0.5 bg-[#B88E52] mb-0.5 opacity-40"></div>
+                <div class="w-5 h-0.5 bg-[#B88E52] mb-0.5 opacity-60"></div>
+                <div class="w-6 h-0.5 bg-[#B88E52] mb-0.5 opacity-80"></div>
+                <div class="w-7 h-0.5 bg-[#B88E52]"></div>
+              </div>
+              <span class="text-[7px] text-[#B88E52] font-semibold tracking-widest leading-none">رافال</span>
+              <span class="text-[6px] text-white uppercase tracking-[0.2em] font-extrabold mt-0.5">Rafal</span>
+            </div>
+          </div>
+
+          <!-- Client 9 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full items-center justify-center select-none">
+              <div class="flex items-center justify-center gap-1">
+                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18"></path>
+                  <path d="M12 12m-6 0a6 6 0 1 0 12 0 6 6 0 1 0-12 0"></path>
+                </svg>
+                <div class="flex flex-col items-start leading-none text-left">
+                  <span class="text-[8px] text-gold font-bold leading-none">وصل</span>
+                  <span class="text-[8px] text-white font-extrabold tracking-tight leading-none mt-0.5">wasl</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client 10 -->
+          <div class="flex-shrink-0 w-[200px] md:w-[220px] aspect-[16/10] bg-card-bg/60 backdrop-blur-md rounded-xl flex items-center justify-center p-6 border border-white/5 hover:border-gold/30 hover:shadow-[0_8px_25px_rgba(184,134,78,0.06)] transition-all duration-500 hover:-translate-y-1">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center select-none">
+              <svg class="w-8 h-8 text-gold mb-1" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24">
+                <path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"></path>
+                <circle cx="12" cy="12" r="3" class="fill-gold/10 text-gold"></circle>
+                <polygon points="12,2 14,8 18,12 14,16 12,22 10,16 6,12 10,8" class="fill-gold text-transparent"></polygon>
+              </svg>
+              <span class="text-[8px] text-white uppercase tracking-[0.25em] font-black font-sans leading-none">Emaar</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROJECTS -->
+  <section id="projects" class="py-24 bg-[#0A0A0A] border-t border-[#111]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section header & filter -->
+      <div class="fade-in-section flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <div>
+          <span class="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3">Portfolio Highlights</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide">Timeless Spaces</h2>
+        </div>
+        
+        <!-- Tag Filter Navigation -->
+        <div class="flex flex-wrap gap-2 md:gap-3 pb-2">
+          <button onclick="filterProjects('all')" class="project-tab text-[10px] md:text-xs font-sans tracking-widest uppercase py-2 px-4.5 text-gold border border-gold/45 bg-gold/10 focus:outline-none rounded-full transition-all duration-300">All</button>
+          <button onclick="filterProjects('architectural')" class="project-tab text-[10px] md:text-xs font-sans tracking-widest text-[#888] uppercase py-2 px-4.5 border border-gold/5 bg-transparent focus:outline-none rounded-full hover:text-white hover:border-gold/30 hover:bg-[#111] transition-all duration-300">Architecture</button>
+          <button onclick="filterProjects('interior')" class="project-tab text-[10px] md:text-xs font-sans tracking-widest text-[#888] uppercase py-2 px-4.5 border border-gold/5 bg-transparent focus:outline-none rounded-full hover:text-white hover:border-gold/30 hover:bg-[#111] transition-all duration-300">Interior</button>
+          <button onclick="filterProjects('landscape')" class="project-tab text-[10px] md:text-xs font-sans tracking-widest text-[#888] uppercase py-2 px-4.5 border border-gold/5 bg-transparent focus:outline-none rounded-full hover:text-white hover:border-gold/30 hover:bg-[#111] transition-all duration-300">Landscape</button>
+          <button onclick="filterProjects('mep')" class="project-tab text-[10px] md:text-xs font-sans tracking-widest text-[#888] uppercase py-2 px-4.5 border border-gold/5 bg-transparent focus:outline-none rounded-full hover:text-white hover:border-gold/30 hover:bg-[#111] transition-all duration-300">MEP</button>
+        </div>
+      </div>
+
+      <!-- Projects Column Grid (3 Columns) -->
+      <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('The Obsidian Pavilion', 'Lake Zurich, CH (2025)', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'Architectural Design', 'A striking black concrete residence cantilevered over Lake Zurich. Minimal borders, steel structure with open-air decks.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="The Obsidian Pavilion" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">The Obsidian Pavilion</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Zurich, CH</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Aura Living Lounge', 'Mayfair Penthouse, UK (2024)', 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80', 'Interior & Exterior Design', 'Curations of pristine monolith fireplaces, custom linear lighting channels, handwound bronze detailing.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Aura Living Lounge" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior & Exterior Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Aura Living Lounge</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">London, UK</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-item-card fade-in-section" data-category="landscape" onclick="openLightbox('The Bronze Horizon', 'Costa Brava Coast, ES (2025)', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80', 'Landscape Design', 'Black-tile overflow water basins hugging wild, sheer clifftop flora, lined with oxidised structural bronze trims.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="The Bronze Horizon" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Landscape Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">The Bronze Horizon</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Costa Brava, ES</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-item-card fade-in-section" data-category="mep" onclick="openLightbox('Luminary Power Spa', 'Aspen High-Altitude, CO (2025)', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', 'MEP Design', 'Advanced high-efficiency geothermal loops routed invisibly beneath monolithic concrete floors, fully managed by dynamic smart interfaces.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Luminary Power Spa" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">MEP Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Luminary Power Spa</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Aspen, CO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Aetheria Concept Render', 'Kyoto Mountainside, JP (2026)', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', '3D Visualization', 'Optical path studies showing custom sunray reflections slicing across minimalist wood columns.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Aetheria Concept Render" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">3D Visualization</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Aetheria Concept Render</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Kyoto, JP</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-item-card fade-in-section" data-category="landscape" onclick="openLightbox('Zen Sanctum Gardens', 'Sonoma Foothills, CA (2025)', 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Landscape Design', 'A seamless transition between pristine black wood facades and stone courtyards featuring water alignments.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Zen Sanctum Gardens" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Landscape Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Zen Sanctum Gardens</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Sonoma, CA</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 5. ABOUT STRIP -->
+  <section id="about" class="py-28 bg-card-bg border-t border-[#1a1a1a]">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="fade-in-section">
+        <span class="text-[11px] text-gold tracking-[0.4em] uppercase block mb-4">The Studio Philosophy</span>
+        
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-light leading-snug tracking-wide text-white mb-8">
+          "Architecture is the composed play of structural volumes brought to life under light."
+        </h2>
+        
+        <p class="text-sm sm:text-base text-gray-400 font-sans font-light tracking-wide leading-relaxed max-w-2xl mx-auto mb-10">
+          Biyaano Architects is an elite spatial laboratory. Operating closely from our office point in Taleex-KM4, Mogadishu, Somalia, we coordinate with private commissioners, luxury hoteliers, and developers to generate masterfully executed properties with a strict discipline of materials.
+        </p>
+        
+        <a href="#contact" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-gold border-b border-transparent hover:border-gold transition-all duration-300 pb-1 font-semibold">
+          Meet the Studio 
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  <section id="contact" class="py-24 bg-dark-bg border-t border-[#111]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      
+      <!-- Contact Info Details -->
+      <div class="fade-in-section flex flex-col justify-between">
+        <div>
+          <span class="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3 font-medium">Inquiries</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide mb-8">Conceive Your Space</h2>
+          <p class="text-gray-400 text-sm font-light leading-relaxed max-w-md mb-12">
+            Let's begin a conversation on architectural layouts, heritage preservation, or bespoke interiors. Fill the inquiry structure or dial our primary Mogadishu atelier.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Mogadishu Atelier</h4>
+                <p class="text-xs text-gray-400">Taleex-KM4, Mogadishu, Somalia</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Email Coordinates</h4>
+                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="mailto:atelier@biyaano.com">atelier@biyaano.com</a></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.506-5.181-3.858-6.68-6.679l1.294-.97c.362-.272.528-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.11-1.008H4.5a2.25 2.25 0 00-2.25 2.25v1.35C2.25 3.51 2.25 3.51 2.25 3.51z"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Telephone Atelier</h4>
+                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="tel:+252612536518">+252-612536518</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-600 uppercase tracking-widest mt-12 block hidden lg:block">
+          © 2026 Biyaano Architects. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Contact Clean Form -->
+      <div class="fade-in-section bg-card-bg p-8 md:p-12 border border-[#1e1e1e] rounded-xl">
+        <form id="contactForm" onsubmit="handleInquirySubmit(event)" class="space-y-8">
+          
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Your Name</label>
+            <input type="text" name="name" required class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300">
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Strategic Email</label>
+            <input type="email" name="email" required class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300">
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Project Core Discipline</label>
+            <select name="service" class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-gray-400 focus:outline-none focus:border-gold transition-colors duration-300">
+              <option value="architectural" class="bg-[#141414] text-white">Architectural Design</option>
+              <option value="interior" class="bg-[#141414] text-white">Interior & Exterior Design</option>
+              <option value="landscape" class="bg-[#141414] text-white">Landscape Architecture</option>
+              <option value="mep" class="bg-[#141414] text-white">MEP Design Engineering</option>
+              <option value="render" class="bg-[#141414] text-white">3D Dynamic Visualization</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">The Narrative Description</label>
+            <textarea name="description" rows="4" required placeholder="Outline your spatial dimensions, location, and constraints..." class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300 placeholder-gray-600 block resize-none"></textarea>
+          </div>
+
+          <!-- Solid Bronze-Gold Submit Button with Black Text -->
+          <button type="submit" class="w-full py-4 bg-gold hover:bg-[#A3733F] text-[#0A0A0A] font-sans font-semibold text-[11px] tracking-[0.3em] uppercase transition-all duration-300 focus:outline-none shadow-md rounded-lg">
+            Transmit Inquiry
+          </button>
+          
+          <div id="submitSuccess" class="hidden text-xs text-green-400 font-sans tracking-wide text-center pt-2">
+            ✓ Transmission Registered. Our Mogadishu Atelier coordinates will make contact momentarily.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. PORTFOLIO LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-6 py-12">
+    <button onclick="closeLightbox()" class="absolute top-8 right-8 text-[#888] hover:text-white focus:outline-none z-50">
+      <svg class="w-8 h-8 stroke-[1.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    
+    <div class="max-w-5xl w-full flex flex-col lg:flex-row bg-[#101010] border border-[#1e1e1e] items-stretch min-h-[450px] rounded-xl overflow-hidden">
+      <div class="lg:w-3/5 relative overflow-hidden aspect-[16/10] bg-black flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Active Project" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+      </div>
+      <div class="lg:w-2/5 p-8 flex flex-col justify-between">
+        <div>
+          <span id="lightbox-tag" class="text-[10px] text-gold uppercase tracking-[0.25em] block mb-2 font-semibold">Category</span>
+          <h3 id="lightbox-title" class="text-3xl font-serif text-white leading-tight font-light mb-1">Project Title</h3>
+          <p id="lightbox-location" class="text-[11px] text-gray-500 uppercase tracking-widest font-sans mb-6">Zurich, CH</p>
+          <div class="h-[1px] bg-gradient-to-r from-[#222] to-transparent mb-6"></div>
+          <p id="lightbox-desc" class="text-xs text-gray-400 leading-relaxed font-light mb-8 max-h-[160px] overflow-y-auto pr-2">
+            Details of composition.
+          </p>
+        </div>
+        
+        <button onclick="closeLightbox()" class="w-full py-3 bg-[#1e1e1e] hover:bg-gold hover:text-black text-white font-sans text-[10px] tracking-widest uppercase transition-colors duration-300 rounded-lg">
+          Return to Atelier
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-[#070707] py-8 border-t border-[#111] text-center text-xs text-gray-600 uppercase tracking-widest">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span>© 2026 Biyaano Architects</span>
+      <div class="flex gap-6">
+        <a href="#hero" class="hover:text-gold transition-colors duration-300">Home</a>
+        <a href="#services" class="hover:text-gold transition-colors duration-300">Expertise</a>
+        <a href="#projects" class="hover:text-gold transition-colors duration-300">Spaces</a>
+        <a href="#contact" class="hover:text-gold transition-colors duration-300 font-semibold text-gold font-medium">Enquiries</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script type="text/javascript">
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      if(isMenuOpen) {
+        mobileMenu.classList.remove('translate-x-full');
+        document.getElementById('line1').setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        document.getElementById('line1').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      }
+    });
+
+    function toggleMenu() {
+      isMenuOpen = false;
+      mobileMenu.classList.add('translate-x-full');
+      document.getElementById('line1').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+
+    // Portfolios Filter
+    function filterProjects(cat) {
+      const items = document.querySelectorAll('.project-item-card');
+      const tabs = document.querySelectorAll('.project-tab');
+      
+      // Update active tab style
+      tabs.forEach(tab => {
+        tab.className = "project-tab text-[10px] md:text-xs font-sans tracking-widest text-[#888] uppercase py-2 px-4.5 border border-gold/5 bg-transparent focus:outline-none rounded-full hover:text-white hover:border-gold/30 hover:bg-[#111] transition-all duration-300";
+      });
+      event.target.className = "project-tab text-[10px] md:text-xs font-sans tracking-widest uppercase py-2 px-4.5 text-gold border border-gold/45 bg-gold/10 focus:outline-none rounded-full transition-all duration-300";
+
+      // Filter visible items
+      items.forEach(item => {
+        if (cat === 'all' || item.getAttribute('data-category') === cat) {
+          item.style.display = 'block';
+          // Force immediate reflow for transition smoothness
+          setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(15px)';
+          setTimeout(() => { item.style.display = 'none'; }, 250);
+        }
+      });
+    }
+
+    // Lightbox modal trigger functions
+    function openLightbox(title, subtitle, imgUrl, category, details) {
+      const modal = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = imgUrl;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-location').innerText = subtitle;
+      document.getElementById('lightbox-tag').innerText = category;
+      document.getElementById('lightbox-desc').innerText = details;
+      
+      modal.classList.remove('pointer-events-none', 'opacity-0');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox');
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    // scrollClients handles custom horizontal scrolling of the featured clients logo line
+    function scrollClients(direction) {
+      const container = document.getElementById('clients-slider');
+      if (container) {
+        const scrollAmount = direction === 'left' ? -280 : 280;
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    // Clean form submission validation & mock response
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const successEl = document.getElementById('submitSuccess');
+      successEl.classList.remove('hidden');
+      
+      // Reset form
+      setTimeout(() => {
+        e.target.reset();
+        setTimeout(() => { successEl.classList.add('hidden'); }, 4000);
+      }, 1000);
+    }
+
+    // Sticky Navbar shadow trigger on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-3', 'shadow-lg', 'bg-black/95');
+        navbar.classList.remove('py-5', 'bg-[#0A0A0A]');
+      } else {
+        navbar.classList.add('py-5', 'bg-[#0A0A0A]');
+        navbar.classList.remove('py-3', 'shadow-lg', 'bg-black/95');
+      }
+    });
+
+    // IntersectionObserver for slide/fade-in
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      sectionObserver.observe(section);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Biyaano Architects",
+  "description": "Luxury architecture portfolio website for Biyaano Architects, featuring premium architectural, interior, exterior, MEP, and landscape designs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
