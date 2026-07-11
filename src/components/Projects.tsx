@@ -40,11 +40,11 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
   return (
     <section
       id="projects"
-      className="py-24 bg-[#0A0A0A] border-t border-gold/15 relative overflow-hidden"
+      className="py-24 bg-[#F5EDE0] border-t border-[#C58E5C]/15 relative overflow-hidden text-[#030303]"
       ref={sectionRef}
     >
       {/* Immersive Drafting Backdrop */}
-      <div className="absolute inset-0 draft-grid opacity-[0.06] pointer-events-none"></div>
+      <div className="absolute inset-0 draft-grid opacity-[0.04] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header & Filters */}
@@ -53,7 +53,7 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
             <span className="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3 font-semibold">
               Portfolio Highlights
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-white tracking-wide">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#030303] tracking-wide">
               Timeless Spaces
             </h2>
           </div>
@@ -72,8 +72,8 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
                 onClick={() => setFilter(tab.id)}
                 className={`text-[10px] md:text-xs font-sans tracking-widest uppercase py-2 px-4.5 focus:outline-none transition-all duration-300 border cursor-pointer rounded-full ${
                   filter === tab.id
-                    ? "text-gold border-gold/45 bg-gold/10"
-                    : "text-gray-500 border-gold/5 bg-transparent hover:text-white hover:border-gold/30 hover:bg-[#111]"
+                    ? "text-[#C58E5C] border-[#C58E5C]/45 bg-[#C58E5C]/10"
+                    : "text-gray-600 border-[#C58E5C]/20 bg-transparent hover:text-[#030303] hover:border-[#C58E5C] hover:bg-white"
                 }`}
               >
                 {tab.label}
@@ -88,7 +88,7 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
             <div
               key={project.id}
               onClick={() => onSelectProject(project)}
-              className="fade-in-section group cursor-pointer overflow-hidden bg-[#141414] border border-gold/15 rounded-xl"
+              className="fade-in-section group cursor-pointer overflow-hidden bg-white border border-[#C58E5C]/15 rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="relative overflow-hidden aspect-[4/3] w-full rounded-t-xl">
                 <img
@@ -103,7 +103,7 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
                   <span className="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">
                     {project.category}
                   </span>
-                  <h4 className="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">
+                  <h4 className="text-white text-2xl font-display font-semibold tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">
                     {project.title}
                   </h4>
                   <p className="text-[11px] text-gray-500 uppercase tracking-widest font-sans">

@@ -5,16 +5,20 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
-  --color-gold: #B8864E;
-  --color-dark-bg: #0A0A0A;
+  --color-gold: #C58E5C;
+  --color-dark-bg: #030303;
   --color-card-bg: #141414;
 }
 
 /* Custom scrollbar and luxury styling */
 html {
   scroll-behavior: smooth;
-  background-color: #0A0A0A;
+  background-color: #030303;
   color: #FFFFFF;
+}
+
+.bg-custom-gradient {
+  background-color: #030303;
 }
 
 ::-webkit-scrollbar {
@@ -63,5 +67,55 @@ html {
 
 .grid-divider {
   background-color: rgba(184, 134, 78, 0.15);
+}
+
+
+
+/* ── Soft section-to-section transitions ── */
+
+/* Dark section: fades into the light section below/above */
+.section-fade-dark {
+  position: relative;
+}
+.section-fade-dark::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #030303, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.section-fade-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #030303, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Light section: fades into the dark section below/above */
+.section-fade-light {
+  position: relative;
+}
+.section-fade-light::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #F5EDE0, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.section-fade-light::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #F5EDE0, transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 

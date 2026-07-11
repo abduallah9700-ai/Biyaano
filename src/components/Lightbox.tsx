@@ -1,5 +1,6 @@
-import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Compass } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, MapPin, Calendar } from "lucide-react";
 import { ProjectItem } from "../types";
+import { useState, useEffect } from "react";
 
 interface LightboxProps {
   project: ProjectItem | null;
@@ -9,7 +10,16 @@ interface LightboxProps {
 }
 
 export default function Lightbox({ project, onClose, onPrev, onNext }: LightboxProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project]);
+
   if (!project) return null;
+
+  const hasMultipleImages = project.images && project.images.length > 0;
+  const activeImage = hasMultipleImages ? project.images![currentImageIndex] : project.imageUrl;
 
   return (
     <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 md:p-12 transition-all duration-300">
@@ -25,7 +35,7 @@ export default function Lightbox({ project, onClose, onPrev, onNext }: LightboxP
       {/* Main Container */}
       <div className="max-w-6xl w-full flex flex-col lg:flex-row bg-[#111111] border border-[#1E1E1E] overflow-hidden rounded-xl items-stretch relative">
         
-        {/* Navigation Buttons inside Container */}
+        {/* Navigation Buttons inside Container (between projects) */}
         <button
           onClick={onPrev}
           className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/70 hover:bg-gold text-white hover:text-black transition-all duration-300 z-10 border border-gold/10 hover:border-transparent rounded-full focus:outline-none cursor-pointer"
@@ -42,14 +52,59 @@ export default function Lightbox({ project, onClose, onPrev, onNext }: LightboxP
           <ChevronRight className="w-5 h-5" />
         </button>
 
-        {/* 1. Project Image Visual */}
-        <div className="lg:w-3/5 aspect-video lg:aspect-auto relative bg-black flex items-center justify-center min-h-[250px] md:min-h-[400px]">
+        {/* 1. Project Image Visual / Slideshow */}
+        <div className="lg:w-3/5 aspect-video lg:aspect-auto relative bg-[#090909] flex items-center justify-center min-h-[250px] md:min-h-[420px] group/gallery">
           <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="w-full h-full object-cover"
+            src={activeImage}
+            alt={`${project.title} - View ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover transition-all duration-500"
             referrerPolicy="no-referrer"
           />
+
+          {hasMultipleImages && project.images!.length > 1 && (
+            <>
+              {/* Left Arrow for image gallery */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+                }}
+                className="absolute left-3 p-2 bg-black/60 hover:bg-gold text-white hover:text-black transition-all duration-300 rounded focus:outline-none cursor-pointer opacity-0 group-hover/gallery:opacity-100 border border-gold/10 hover:border-transparent z-20"
+                title="Previous Image"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              {/* Right Arrow for image gallery */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+                }}
+                className="absolute right-3 p-2 bg-black/60 hover:bg-gold text-white hover:text-black transition-all duration-300 rounded focus:outline-none cursor-pointer opacity-0 group-hover/gallery:opacity-100 border border-gold/10 hover:border-transparent z-20"
+                title="Next Image"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              {/* Thumbnail dots overlay at the bottom */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/55 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-20">
+                {project.images!.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(idx);
+                    }}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      currentImageIndex === idx ? "bg-gold scale-125" : "bg-white/40 hover:bg-white/70"
+                    }`}
+                    title={`View ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {/* 2. Project Details Content */}

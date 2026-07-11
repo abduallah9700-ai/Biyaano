@@ -8,7 +8,7 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,7 +20,6 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
           fontFamily: {
             serif: ["'Cormorant Garamond'", 'Georgia', 'serif'],
             sans: ["'Inter'", 'system-ui', 'sans-serif'],
-            display: ["'Space Grotesk'", 'sans-serif'],
           },
           colors: {
             gold: '#B8864E',
@@ -110,7 +109,7 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
       
       <!-- Logo Wordmark -->
       <a href="#hero" class="flex items-center gap-1 group">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 140" class="w-[185px] h-auto" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" class="w-[180px] h-auto" fill="none">
           <defs>
             <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#8E673A" />
@@ -120,31 +119,34 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
               <stop offset="100%" stop-color="#734E24" />
             </linearGradient>
           </defs>
-          <g fill="url(#navLogoGradient)" fill-rule="evenodd">
-            <!-- b -->
-            <path d="M 15 25 L 25 15 L 25 50 L 55 50 L 55 85 L 45 95 L 15 95 Z M 25 60 L 45 60 L 45 80 L 40 85 L 25 85 Z" />
-            <!-- i -->
-            <path d="M 65 60 L 75 50 L 75 95 L 65 95 Z" />
-            <path d="M 65 38 L 73 30 L 83 30 L 75 38 Z" />
-            <!-- y -->
-            <path d="M 85 50 L 95 50 L 95 85 L 105 85 L 105 50 L 115 50 L 115 105 L 105 115 L 105 95 L 95 95 L 85 85 Z" />
-            <!-- a -->
-            <path d="M 125 60 L 135 50 L 165 50 L 165 95 L 125 95 Z M 135 60 L 155 60 L 155 80 L 150 85 L 135 85 Z" />
-            <!-- a -->
-            <path d="M 175 60 L 185 50 L 215 50 L 215 95 L 175 95 Z M 185 60 L 205 60 L 205 80 L 200 85 L 185 85 Z" />
-            <!-- n -->
-            <path d="M 225 50 L 255 50 L 265 60 L 265 95 L 255 95 L 255 65 L 235 65 L 235 95 L 225 95 Z" />
-            <!-- o -->
-            <path d="M 285 50 L 305 50 L 315 60 L 315 85 L 305 95 L 285 95 L 275 85 L 275 60 Z M 290 60 L 300 60 L 305 65 L 305 80 L 300 85 L 290 85 L 285 80 L 285 65 Z" />
+          <g fill="url(#navLogoGradient)">
+            <!-- 'b' - tall stem with gap or chamfered custom logo shapes -->
+            <path d="M 20,10 L 32,10 L 32,60 C 32,60 38,52 48,52 C 60,52 68,62 68,76 L 68,95 L 56,95 L 56,76 C 56,69 51,64 45,64 C 39,64 32,69 32,76 L 32,95 L 20,95 L 20,10 Z" />
+            <!-- 'i' - short stem with slanted block dot -->
+            <path d="M 78,55 L 90,55 L 90,95 L 78,95 Z" />
+            <polygon points="78,45 90,38 90,46 78,53" />
+            <!-- 'y' -->
+            <path d="M 100,55 L 112,55 L 112,85 C 112,92 117,95 125,95 C 129,95 132,94 135,92 L 135,108 C 130,111 121,112 114,112 C 103,112 100,105 100,95 L 100,55 Z" />
+            <!-- 'a' -->
+            <path d="M 145,55 L 157,55 L 157,62 C 161,56 168,52 176,52 C 188,52 195,60 195,73 L 195,95 L 183,95 L 183,73 C 183,67 178,63 172,63 C 165,63 157,68 157,75 L 157,95 L 145,95 Z" />
+            <!-- 'a' -->
+            <path d="M 205,55 L 217,55 L 217,62 C 221,56 228,52 236,52 C 248,52 255,60 255,73 L 255,95 L 243,95 L 243,73 C 243,67 238,63 232,63 C 225,63 217,68 217,75 L 217,95 L 205,95 Z" />
+            <!-- 'n' -->
+            <path d="M 265,55 L 277,55 L 277,62 C 281,56 288,52 296,52 C 308,52 315,60 315,73 L 315,95 L 303,95 L 303,73 C 303,67 298,63 292,63 C 285,63 277,68 277,75 L 277,95 L 265,95 Z" />
+            <!-- 'o' -->
+            <path d="M 335,52 C 352,52 362,64 362,76 C 362,88 352,98 335,98 C 318,98 308,88 308,76 C 308,64 318,52 335,52 Z M 335,64 C 326,64 321,70 321,76 C 321,82 326,88 335,88 C 344,88 349,82 349,76 C 349,70 344,64 335,64 Z" />
           </g>
-          <text x="122" y="122" font-family="'Inter', sans-serif" font-weight="400" font-size="20" letter-spacing="5.5" fill="url(#navLogoGradient)" class="uppercase">architects</text>
+          <text x="180" y="123" font-family="'Inter', sans-serif" font-weight="300" font-size="20" letter-spacing="4" fill="url(#navLogoGradient)">architects</text>
         </svg>
-      </a>      <!-- Navigation Links (Desktop) -->
+      </a>
+
+      <!-- Navigation Links (Desktop) -->
       <div class="hidden md:flex items-center gap-10">
         <a href="#hero" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Home</a>
         <a href="#services" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Services</a>
         <a href="#projects" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Projects</a>
         <a href="#about" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Studio</a>
+        <a href="#team" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Team</a>
         <a href="#contact" class="text-[11px] font-sans tracking-[0.2em] font-medium text-white uppercase nav-link transition-colors duration-300">Contact</a>
       </div>
 
@@ -162,9 +164,10 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
       <a href="#services" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Services</a>
       <a href="#projects" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Projects</a>
       <a href="#about" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Studio</a>
+      <a href="#team" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Team</a>
       <a href="#contact" onclick="toggleMenu()" class="text-xl font-sans tracking-[0.25em] text-white uppercase hover:text-gold transition-colors duration-300">Contact</a>
-
-      <div class="mt-2 text-[11px] text-gray-500 uppercase tracking-widest flex flex-col gap-2">
+      
+      <div class="mt-8 border-t border-[#222] pt-8 text-[11px] text-gray-500 uppercase tracking-widest flex flex-col gap-2">
         <span>© 2026 Biyaano Architects</span>
         <span>Mogadishu • Taleex-KM4</span>
       </div>
@@ -609,81 +612,107 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
 
       <!-- Projects Column Grid (3 Columns) -->
       <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project 1 -->
-        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('The Obsidian Pavilion', 'Lake Zurich, CH (2025)', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'Architectural Design', 'A striking black concrete residence cantilevered over Lake Zurich. Minimal borders, steel structure with open-air decks.')">
+
+        <!-- Project: Anaam Digital Printing Company -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Anaam Digital Printing Company', 'Mogadishu, SO (2025)', '/projects/anaam-digital-printing/anaam-2.jpg;/projects/anaam-digital-printing/anaam-1.jpg;/projects/anaam-digital-printing/anaam-3.jpg;/projects/anaam-digital-printing/anaam-4.jpg', 'Interior &amp; Exterior Design', 'Anaam Digital Printing Company is a modern office and production space designed by Biyaano Architects, focusing on creating a clean, futuristic, and highly functional workspace. The interior features a striking visual identity centered around bold teal architectural lines, custom directional arrows representing progress and speed, and a sleek marble reception desk. Strategically integrated lighting and modern wood floors create an inviting waiting area, while integrated displays and clear branding convey a highly professional corporate image.')">
           <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="The Obsidian Pavilion" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <img src="/projects/anaam-digital-printing/anaam-2.jpg" alt="Anaam Digital Printing Company" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">The Obsidian Pavilion</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Zurich, CH</p>
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior &amp; Exterior Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Anaam Digital Printing</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Aura Living Lounge', 'Mayfair Penthouse, UK (2024)', 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80', 'Interior & Exterior Design', 'Curations of pristine monolith fireplaces, custom linear lighting channels, handwound bronze detailing.')">
-          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Aura Living Lounge" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+        <!-- Project: Afrik Coffee Shop -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Afrik Coffee Shop', 'Mogadishu, SO (2025)', '/projects/afrik-coffee-shop/afrik-4.jpg;/projects/afrik-coffee-shop/afrik-1.jpg;/projects/afrik-coffee-shop/afrik-2.jpg;/projects/afrik-coffee-shop/afrik-3.jpg;/projects/afrik-coffee-shop/afrik-5.jpg', 'Interior &amp; Exterior Design', 'Afrik Coffee Shop is a vibrant café and dining space designed by Biyaano Architects, blending African cultural identity with contemporary interior design. The project celebrates traditional African patterns and motifs through custom wall panels, arched openings, and warm terracotta tones — creating an immersive and welcoming atmosphere. The exterior features a clean two-storey façade with arched entrances, a rooftop pergola, and natural landscaping, while the interior is crafted with rattan furniture, marble-top tables, decorative room dividers, and soft ambient lighting to deliver a premium yet culturally rich dining experience.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/afrik-coffee-shop/afrik-4.jpg" alt="Afrik Coffee Shop" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior &amp; Exterior Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Afrik Coffee Shop</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 0000 (Daaci Show Studio) -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Daaci Show Studio', 'Mogadishu, SO (2025)', '/projects/daaci-show-studio/daaci-3.jpg;/projects/daaci-show-studio/daaci-1.jpg;/projects/daaci-show-studio/daaci-2.jpg;/projects/daaci-show-studio/daaci-4.jpg;/projects/daaci-show-studio/daaci-5.jpg', 'Interior & Exterior Design', 'Daaci Show Studio is a specialized television broadcast environment designed by Biyaano Architects for an Islamic competition program led by Nasiye TV during the holy month of Ramadan. The design focuses on merging iconic Islamic architectural features — such as geometric wall panels and arched screens — with the technical and practical requirements of a live broadcasting studio.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/daaci-show-studio/daaci-3.jpg" alt="Daaci Show Studio" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
               <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior & Exterior Design</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Aura Living Lounge</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">London, UK</p>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Daaci Show Studio</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-item-card fade-in-section" data-category="landscape" onclick="openLightbox('The Bronze Horizon', 'Costa Brava Coast, ES (2025)', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80', 'Landscape Design', 'Black-tile overflow water basins hugging wild, sheer clifftop flora, lined with oxidised structural bronze trims.')">
-          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="The Bronze Horizon" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+        <!-- Project 000 (Alamtara) -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Alamtara School', 'Mogadishu, SO (2025)', '/projects/alamtara/alamtara-1.jpg;/projects/alamtara/alamtara-2.jpg;/projects/alamtara/alamtara-3.jpg;/projects/alamtara/alamtara-4.jpg', 'Architectural Design', 'Alamtara is a modern school building designed by Biyaano Architects, focusing on both the interior and the exterior of the building. The architectural design integrates safety and shading screens with open learning environments, creating a functional, secure, and encouraging atmosphere for students and educators.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/alamtara/alamtara-1.jpg" alt="Alamtara School" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Landscape Design</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">The Bronze Horizon</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Costa Brava, ES</p>
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Alamtara School</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-item-card fade-in-section" data-category="mep" onclick="openLightbox('Luminary Power Spa', 'Aspen High-Altitude, CO (2025)', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', 'MEP Design', 'Advanced high-efficiency geothermal loops routed invisibly beneath monolithic concrete floors, fully managed by dynamic smart interfaces.')">
-          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Luminary Power Spa" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+        <!-- Project 00 (Mogadishu Health Cluster) -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Mogadishu Health Cluster', 'Mogadishu, SO (2025)', '/projects/mogadishu-health-cluster/health-5.jpg;/projects/mogadishu-health-cluster/health-2.jpg;/projects/mogadishu-health-cluster/health-1.jpg;/projects/mogadishu-health-cluster/health-3.jpg;/projects/mogadishu-health-cluster/health-4.jpg', 'Interior & Exterior Design', 'Mogadishu Health Cluster is one of Biyaano Architects’ distinguished institutional projects, designed to support healthcare coordination and public service efficiency in Somalia. Our vision was to create a functional, professional, and collaborative space that enhances the working environment for health organizations and stakeholders. The architectural design focuses on openness, accessibility, and practicality, ensuring that offices, meeting areas, and common spaces promote communication and productivity. Natural lighting, sustainable materials, and a clean modern aesthetic define the project’s visual identity, aligning with the values of care and community service.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/mogadishu-health-cluster/health-5.jpg" alt="Mogadishu Health Cluster" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">MEP Design</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Luminary Power Spa</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Aspen, CO</p>
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior & Exterior Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Mogadishu Health Cluster</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Aetheria Concept Render', 'Kyoto Mountainside, JP (2026)', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', '3D Visualization', 'Optical path studies showing custom sunray reflections slicing across minimalist wood columns.')">
-          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Aetheria Concept Render" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+        <!-- Project 0 (Hodan Hospital) -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Hodan Hospital', 'Mogadishu, SO (2025)', '/projects/hodan-hospital/hodan-2.jpg;/projects/hodan-hospital/hodan-1.jpg', 'Architectural Design', 'Hodan Hospital is one of our remarkable healthcare design projects that reflects Biyaano Architects’ commitment to functionality, innovation, and human-centered design. Our goal was to create a hospital environment that promotes healing, efficiency, and comfort — both for patients and medical staff. The design features open spaces, natural lighting, and a smooth flow between departments to ensure accessibility and ease of movement.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/hodan-hospital/hodan-2.jpg" alt="Hodan Hospital" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">3D Visualization</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Aetheria Concept Render</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Kyoto, JP</p>
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Hodan Hospital</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
 
-        <!-- Project 6 -->
-        <div class="project-item-card fade-in-section" data-category="landscape" onclick="openLightbox('Zen Sanctum Gardens', 'Sonoma Foothills, CA (2025)', 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Landscape Design', 'A seamless transition between pristine black wood facades and stone courtyards featuring water alignments.')">
-          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Zen Sanctum Gardens" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+        <!-- Project 1 (Magool Restaurant) -->
+        <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Magool Restaurant', 'Mogadishu, SO (2024)', '/projects/magool-restaurant/magool-4.jpg;/projects/magool-restaurant/magool-2.jpg;/projects/magool-restaurant/magool-1.jpg;/projects/magool-restaurant/magool-3.jpg;/projects/magool-restaurant/magool-5.jpg', 'Interior & Exterior Design', 'Magool Restaurant is one of Biyaano Architects’ standout interior and architectural design projects — a creative blend of modern aesthetics and cultural warmth. Our vision was to design a space that invites people to connect, relax, and enjoy a unique dining experience in a beautifully designed environment. The restaurant’s design combines contemporary style with local artistic elements, using warm tones, natural materials, and strategic lighting to create a cozy and welcoming atmosphere.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/magool-restaurant/magool-4.jpg" alt="Magool Restaurant" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Landscape Design</span>
-              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Zen Sanctum Gardens</h4>
-              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Sonoma, CA</p>
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Interior & Exterior Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Magool Restaurant</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 (Palm Resort) -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Palm Resort', 'Mogadishu, SO (2026)', '/projects/palm-resort/palm-resort-2.jpg;/projects/palm-resort/palm-resort-1.jpg;/projects/palm-resort/palm-resort-3.jpg;/projects/palm-resort/palm-resort-4.jpg;/projects/palm-resort/palm-resort-5.jpg', 'Architectural Design', 'Palm Resort is one of Biyaano Architects’ signature hospitality projects — a perfect blend of modern luxury and natural beauty. Our team designed the resort to provide guests with an unforgettable experience that balances comfort, relaxation, and architectural elegance. Every structure, from the villas to the leisure areas, was thoughtfully designed to capture natural light, panoramic ocean views, and the coastal biome. The concept emphasizes open spaces, tropical landscaping, and seamless indoor-outdoor connections to enhance the resort’s coastal atmosphere.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/palm-resort/palm-resort-2.jpg" alt="Palm Resort" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" referrerPolicy="no-referrer">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Palm Resort</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
             </div>
           </div>
         </div>
@@ -708,8 +737,8 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
           Biyaano Architects is an elite spatial laboratory. Operating closely from our office point in Taleex-KM4, Mogadishu, Somalia, we coordinate with private commissioners, luxury hoteliers, and developers to generate masterfully executed properties with a strict discipline of materials.
         </p>
         
-        <a href="#contact" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-gold border-b border-transparent hover:border-gold transition-all duration-300 pb-1 font-semibold">
-          Meet the Studio 
+        <a href="#team" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-gold border-b border-transparent hover:border-gold transition-all duration-300 pb-1 font-semibold">
+          Meet the Team 
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
           </svg>
@@ -718,79 +747,180 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 6. CONTACT -->
-  <section id="contact" class="py-28 bg-[#0A0A0A] border-t border-gold/15 relative overflow-hidden">
-    <!-- Immersive Drafting Backdrop -->
-    <div class="absolute inset-0 draft-grid opacity-[0.08] pointer-events-none"></div>
+  <!-- 6. TEAM MEMBERS -->
+  <section id="team" class="py-28 bg-dark-bg border-t border-[#111]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
 
-    <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-      
       <!-- Section Header -->
-      <div class="fade-in-section text-center max-w-2xl mx-auto mb-20">
-        <span class="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3 font-semibold">Inquiries</span>
-        <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide mb-6">Conceive & Collaborate</h2>
-        <p class="text-gray-400 text-sm font-light leading-relaxed max-w-lg mx-auto">
-          Let's begin a conversation on luxury residential development, spatial composition, or bespoke interiors. Reach out to our primary ateliers or connect with us digitally.
+      <div class="fade-in-section text-center mb-20">
+        <span class="text-[11px] text-gold tracking-[0.4em] uppercase block mb-4">The People Behind the Vision</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-wide">Our Team</h2>
+        <div class="mt-6 mx-auto w-12 h-px bg-gold opacity-60"></div>
+      </div>
+
+      <!-- Team Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Member 1: Abdiwahab Ibrahim Ahmed -->
+        <div class="fade-in-section group text-center">
+          <div class="relative overflow-hidden mb-6 mx-auto" style="width:100%;max-width:320px;aspect-ratio:3/4;">
+            <!-- Gold border frame -->
+            <div class="absolute inset-0 border border-[#2a2a2a] group-hover:border-gold transition-colors duration-700 z-10 pointer-events-none"></div>
+            <!-- Corner accents -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Photo -->
+            <img src="/team/abdiwahab.jpg" alt="Abdiwahab Ibrahim Ahmed" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+            <!-- Subtle gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          </div>
+          <!-- Info -->
+          <div class="mt-2">
+            <div class="w-6 h-px bg-gold mx-auto mb-4 opacity-60"></div>
+            <span class="text-[10px] text-gold uppercase tracking-[0.35em] block mb-2">Architect</span>
+            <h3 class="text-white font-serif font-light text-xl tracking-wide">Abdiwahab Ibrahim Ahmed</h3>
+          </div>
+        </div>
+
+        <!-- Member 2: Abdikani Hussein Omar -->
+        <div class="fade-in-section group text-center">
+          <div class="relative overflow-hidden mb-6 mx-auto" style="width:100%;max-width:320px;aspect-ratio:3/4;">
+            <div class="absolute inset-0 border border-[#2a2a2a] group-hover:border-gold transition-colors duration-700 z-10 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img src="/team/abdikani.jpg" alt="Abdikani Hussein Omar" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          </div>
+          <div class="mt-2">
+            <div class="w-6 h-px bg-gold mx-auto mb-4 opacity-60"></div>
+            <span class="text-[10px] text-gold uppercase tracking-[0.35em] block mb-2">Architect</span>
+            <h3 class="text-white font-serif font-light text-xl tracking-wide">Abdikani Hussein Omar</h3>
+          </div>
+        </div>
+
+        <!-- Member 3: Hussein Mohamed Abdi -->
+        <div class="fade-in-section group text-center">
+          <div class="relative overflow-hidden mb-6 mx-auto" style="width:100%;max-width:320px;aspect-ratio:3/4;">
+            <div class="absolute inset-0 border border-[#2a2a2a] group-hover:border-gold transition-colors duration-700 z-10 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img src="/team/hussein.jpg" alt="Hussein Mohamed Abdi" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          </div>
+          <div class="mt-2">
+            <div class="w-6 h-px bg-gold mx-auto mb-4 opacity-60"></div>
+            <span class="text-[10px] text-gold uppercase tracking-[0.35em] block mb-2">Architect</span>
+            <h3 class="text-white font-serif font-light text-xl tracking-wide">Hussein Mohamed Abdi</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONTACT -->
+  <section id="contact" class="py-24 bg-dark-bg border-t border-[#111]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      
+      <!-- Contact Info Details -->
+      <div class="fade-in-section flex flex-col justify-between">
+        <div>
+          <span class="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3 font-medium">Inquiries</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-light text-white tracking-wide mb-8">Conceive Your Space</h2>
+          <p class="text-gray-400 text-sm font-light leading-relaxed max-w-md mb-12">
+            Let's begin a conversation on architectural layouts, heritage preservation, or bespoke interiors. Fill the inquiry structure or dial our primary Mogadishu atelier.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Mogadishu Atelier</h4>
+                <p class="text-xs text-gray-400">Taleex-KM4, Mogadishu, Somalia</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Email Coordinates</h4>
+                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="mailto:atelier@biyaano.com">atelier@biyaano.com</a></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <span class="text-gold mt-1">
+                <svg class="w-5 h-5 stroke-[1.25]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.506-5.181-3.858-6.68-6.679l1.294-.97c.362-.272.528-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.11-1.008H4.5a2.25 2.25 0 00-2.25 2.25v1.35C2.25 3.51 2.25 3.51 2.25 3.51z"></path>
+                </svg>
+              </span>
+              <div>
+                <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Telephone Atelier</h4>
+                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="tel:+252612536518">+252-612536518</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-600 uppercase tracking-widest mt-12 block hidden lg:block">
+          © 2026 Biyaano Architects. All rights reserved.
         </p>
       </div>
 
-      <!-- 3-Column Luxury Coordinate Grid -->
-      <div class="fade-in-section grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <!-- Address -->
-        <div class="flex flex-col items-center text-center p-8 border border-gold/10 bg-[#0E0E0E] hover:border-gold/25 transition-all duration-500 group rounded-xl">
-          <span class="text-gold mb-5 p-3 rounded-full border border-gold/5 bg-gold/5 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-6 h-6 fill-none stroke-current" stroke-width="1.25" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
-            </svg>
-          </span>
-          <h4 class="text-xs uppercase text-gold tracking-widest mb-3 font-semibold">Mogadishu Atelier</h4>
-          <p class="text-xs text-gray-400 leading-relaxed max-w-[220px]">
-            Taleex-KM4, Mogadishu, Somalia
-          </p>
-        </div>
+      <!-- Contact Clean Form -->
+      <div class="fade-in-section bg-card-bg p-8 md:p-12 border border-[#1e1e1e] rounded-xl">
+        <form id="contactForm" onsubmit="handleInquirySubmit(event)" class="space-y-8">
+          
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Your Name</label>
+            <input type="text" name="name" required class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300">
+          </div>
 
-        <!-- Email -->
-        <div class="flex flex-col items-center text-center p-8 border border-gold/10 bg-[#0E0E0E] hover:border-gold/25 transition-all duration-500 group rounded-xl">
-          <span class="text-gold mb-5 p-3 rounded-full border border-gold/5 bg-gold/5 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-6 h-6 fill-none stroke-current" stroke-width="1.25" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
-            </svg>
-          </span>
-          <h4 class="text-xs uppercase text-gold tracking-widest mb-3 font-semibold">Email Coordinates</h4>
-          <p class="text-xs text-gray-400 hover:text-white transition-colors duration-300">
-            <a href="mailto:atelier@biyaano.com" class="hover:underline">atelier@biyaano.com</a>
-          </p>
-        </div>
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Strategic Email</label>
+            <input type="email" name="email" required class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300">
+          </div>
 
-        <!-- Telephone -->
-        <div class="flex flex-col items-center text-center p-8 border border-gold/10 bg-[#0E0E0E] hover:border-gold/25 transition-all duration-500 group rounded-xl">
-          <span class="text-gold mb-5 p-3 rounded-full border border-gold/5 bg-gold/5 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-6 h-6 fill-none stroke-current" stroke-width="1.25" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.506-5.181-3.858-6.68-6.679l1.294-.97c.362-.272.528-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.11-1.008H4.5a2.25 2.25 0 00-2.25 2.25v1.35C2.25 3.51 2.25 3.51 2.25 3.51z"></path>
-            </svg>
-          </span>
-          <h4 class="text-xs uppercase text-gold tracking-widest mb-3 font-semibold">Telephone Atelier</h4>
-          <p class="text-xs text-gray-400 hover:text-white transition-colors duration-300">
-            <a href="tel:+252612536518" class="hover:underline">+252-612536518</a>
-          </p>
-        </div>
-      </div>
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">Project Core Discipline</label>
+            <select name="service" class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-gray-400 focus:outline-none focus:border-gold transition-colors duration-300">
+              <option value="architectural" class="bg-[#141414] text-white">Architectural Design</option>
+              <option value="interior" class="bg-[#141414] text-white">Interior & Exterior Design</option>
+              <option value="landscape" class="bg-[#141414] text-white">Landscape Architecture</option>
+              <option value="mep" class="bg-[#141414] text-white">MEP Design Engineering</option>
+              <option value="render" class="bg-[#141414] text-white">3D Dynamic Visualization</option>
+            </select>
+          </div>
 
-      <!-- Digital Ateliers (Social Links) -->
-      <div class="fade-in-section flex flex-col items-center border-t border-gold/10 pt-10">
-        <h4 class="text-[10px] uppercase text-gold tracking-[0.25em] font-semibold mb-6">Digital Ateliers</h4>
-        <div class="flex gap-5">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gold hover:border-gold transition-all duration-300 w-11 h-11 border border-[#222] flex items-center justify-center bg-[#0D0D0D] rounded-xl" title="Instagram">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gold hover:border-gold transition-all duration-300 w-11 h-11 border border-[#222] flex items-center justify-center bg-[#0D0D0D] rounded-xl" title="TikTok">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gold hover:border-gold transition-all duration-300 w-11 h-11 border border-[#222] flex items-center justify-center bg-[#0D0D0D] rounded-xl" title="YouTube">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-          </a>
-        </div>
+          <div class="space-y-2">
+            <label class="text-[10px] text-gold uppercase tracking-[0.34em] font-sans font-medium block">The Narrative Description</label>
+            <textarea name="description" rows="4" required placeholder="Outline your spatial dimensions, location, and constraints..." class="w-full bg-transparent border-b border-gold/40 text-sm font-sans font-light py-2 text-white focus:outline-none focus:border-gold transition-colors duration-300 placeholder-gray-600 block resize-none"></textarea>
+          </div>
+
+          <!-- Solid Bronze-Gold Submit Button with Black Text -->
+          <button type="submit" class="w-full py-4 bg-gold hover:bg-[#A3733F] text-[#0A0A0A] font-sans font-semibold text-[11px] tracking-[0.3em] uppercase transition-all duration-300 focus:outline-none shadow-md rounded-lg">
+            Transmit Inquiry
+          </button>
+          
+          <div id="submitSuccess" class="hidden text-xs text-green-400 font-sans tracking-wide text-center pt-2">
+            ✓ Transmission Registered. Our Mogadishu Atelier coordinates will make contact momentarily.
+          </div>
+        </form>
       </div>
 
     </div>
@@ -805,8 +935,24 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
     </button>
     
     <div class="max-w-5xl w-full flex flex-col lg:flex-row bg-[#101010] border border-[#1e1e1e] items-stretch min-h-[450px] rounded-xl overflow-hidden">
-      <div class="lg:w-3/5 relative overflow-hidden aspect-[16/10] bg-black flex items-center justify-center">
+      <div class="lg:w-3/5 relative overflow-hidden aspect-[16/10] bg-black flex items-center justify-center group/gallery">
         <img id="lightbox-img" src="" alt="Active Project" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+        
+        <!-- Gallery navigation overlay buttons (only visible if multiple images exist) -->
+        <button id="lightbox-prev-btn" onclick="prevLightboxImage(event)" class="absolute left-3 p-2 bg-black/60 hover:bg-gold text-white hover:text-black transition-all duration-300 rounded focus:outline-none cursor-pointer hidden border border-gold/10 hover:border-transparent z-20">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button id="lightbox-next-btn" onclick="nextLightboxImage(event)" class="absolute right-3 p-2 bg-black/60 hover:bg-gold text-white hover:text-black transition-all duration-300 rounded focus:outline-none cursor-pointer hidden border border-gold/10 hover:border-transparent z-20">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+        
+        <!-- Thumbnail dots overlay at the bottom -->
+        <div id="lightbox-dots-container" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/55 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-20 hidden">
+        </div>
       </div>
       <div class="lg:w-2/5 p-8 flex flex-col justify-between">
         <div>
@@ -826,27 +972,15 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
     </div>
   </div>
 
-  <footer class="bg-[#070707] py-8 border-t border-[#111] text-xs text-gray-600 uppercase tracking-widest">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
-        <span>© 2026 Biyaano Architects</span>
-        <div class="flex gap-4 border-t sm:border-t-0 sm:border-l border-[#222] pt-4 sm:pt-0 sm:pl-6">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold transition-colors duration-300" title="Instagram">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold transition-colors duration-300" title="TikTok">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold transition-colors duration-300" title="YouTube">
-            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-          </a>
-        </div>
-      </div>
+  <footer class="bg-[#070707] py-8 border-t border-[#111] text-center text-xs text-gray-600 uppercase tracking-widest">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span>© 2026 Biyaano Architects</span>
       <div class="flex gap-6">
         <a href="#hero" class="hover:text-gold transition-colors duration-300">Home</a>
         <a href="#services" class="hover:text-gold transition-colors duration-300">Expertise</a>
         <a href="#projects" class="hover:text-gold transition-colors duration-300">Spaces</a>
-        <a href="#contact" class="hover:text-gold transition-colors duration-300 font-semibold text-gold">Enquiries</a>
+        <a href="#team" class="hover:text-gold transition-colors duration-300">Team</a>
+        <a href="#contact" class="hover:text-gold transition-colors duration-300 font-semibold text-gold font-medium">Enquiries</a>
       </div>
     </div>
   </footer>
@@ -900,17 +1034,76 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
       });
     }
 
-    // Lightbox modal trigger functions
-    function openLightbox(title, subtitle, imgUrl, category, details) {
+    let currentImgList = [];
+    let currentImgIndex = 0;
+
+    function openLightbox(title, subtitle, imgUrlsString, category, details) {
       const modal = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = imgUrl;
+      currentImgList = imgUrlsString.split(';');
+      currentImgIndex = 0;
+      
+      document.getElementById('lightbox-img').src = currentImgList[0];
       document.getElementById('lightbox-title').innerText = title;
       document.getElementById('lightbox-location').innerText = subtitle;
       document.getElementById('lightbox-tag').innerText = category;
       document.getElementById('lightbox-desc').innerText = details;
       
+      const prevBtn = document.getElementById('lightbox-prev-btn');
+      const nextBtn = document.getElementById('lightbox-next-btn');
+      const dotsContainer = document.getElementById('lightbox-dots-container');
+      
+      if (currentImgList.length > 1) {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        dotsContainer.classList.remove('hidden');
+        
+        // build dots
+        dotsContainer.innerHTML = '';
+        currentImgList.forEach((_, idx) => {
+          const dot = document.createElement('button');
+          dot.className = \`w-1.5 h-1.5 rounded-full transition-all duration-300 \${idx === 0 ? 'bg-gold scale-125' : 'bg-white/40 hover:bg-white/70'}\`;
+          dot.title = \`View \${idx + 1}\`;
+          dot.onclick = (e) => {
+            e.stopPropagation();
+            setLightboxImage(idx);
+          };
+          dotsContainer.appendChild(dot);
+        });
+      } else {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        dotsContainer.classList.add('hidden');
+      }
+      
       modal.classList.remove('pointer-events-none', 'opacity-0');
       modal.classList.add('opacity-100');
+    }
+
+    function setLightboxImage(index) {
+      currentImgIndex = index;
+      document.getElementById('lightbox-img').src = currentImgList[currentImgIndex];
+      
+      // Update dots state
+      const dots = document.getElementById('lightbox-dots-container').children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === currentImgIndex) {
+          dots[i].className = 'w-1.5 h-1.5 rounded-full transition-all duration-300 bg-gold scale-125';
+        } else {
+          dots[i].className = 'w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70';
+        }
+      }
+    }
+
+    function prevLightboxImage(e) {
+      if (e) e.stopPropagation();
+      let prevIdx = (currentImgIndex - 1 + currentImgList.length) % currentImgList.length;
+      setLightboxImage(prevIdx);
+    }
+
+    function nextLightboxImage(e) {
+      if (e) e.stopPropagation();
+      let nextIdx = (currentImgIndex + 1) % currentImgList.length;
+      setLightboxImage(nextIdx);
     }
 
     function closeLightbox() {
@@ -974,4 +1167,5 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
     });
   </script>
 </body>
-</html>`;
+</html>
+`;

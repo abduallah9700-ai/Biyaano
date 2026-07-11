@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Clients from "./components/Clients";
 import Lightbox from "./components/Lightbox";
 import About from "./components/About";
+import TeamMembers from "./components/TeamMembers";
 import Contact from "./components/Contact";
 import ExportModal from "./components/ExportModal";
 import { PROJECTS } from "./data/portfolioData";
@@ -51,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-white font-sans selection:bg-gold selection:text-black antialiased relative overflow-x-hidden">
+    <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#C58E5C] selection:text-black antialiased relative overflow-x-hidden">
       {/* 1. Sticky Nav bar */}
       <Navbar onOpenExport={() => setIsExportOpen(true)} />
 
@@ -70,13 +71,17 @@ export default function App() {
       {/* 5. About Strip */}
       <About />
 
-      {/* 6. Clean Interactive Form Column */}
+      {/* 6. Team Members */}
+      <TeamMembers />
+
+      {/* 7. Clean Interactive Form Column */}
       <Contact />
 
       {/* Footer Branding line */}
-      <footer className="bg-[#070707] py-8 border-t border-[#111] text-xs text-gray-600 uppercase tracking-widest">
+      <footer className="bg-transparent py-8 border-t border-[#332211] text-xs text-gray-600 uppercase tracking-widest">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
+            <img src="/logo.png" alt="Biyaano Architects" className="w-[120px] h-auto drop-shadow-sm opacity-80" />
             <span>© 2026 Biyaano Architects</span>
             <div className="flex gap-4 border-t sm:border-t-0 sm:border-l border-[#222] pt-4 sm:pt-0 sm:pl-6">
               <a
@@ -117,6 +122,9 @@ export default function App() {
             </a>
             <a href="#projects" className="hover:text-gold transition-colors duration-300">
               Spaces
+            </a>
+            <a href="#team" className="hover:text-gold transition-colors duration-300">
+              Team
             </a>
             <a href="#contact" className="hover:text-gold transition-colors duration-300 font-semibold text-gold">
               Enquiries

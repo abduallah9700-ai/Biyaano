@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 bg-[#141414] border-t border-gold/15 relative overflow-hidden"
+      className="py-28 bg-[#030303] border-t border-[#C58E5C]/15 relative overflow-hidden text-white"
       ref={sectionRef}
     >
       {/* Immersive Drafting Backdrop */}
@@ -36,7 +36,7 @@ export default function About() {
             The Studio Philosophy
           </span>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-light leading-snug tracking-wide text-white mb-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-medium leading-snug tracking-wide text-white mb-8">
             "Architecture is the composed play of structural volumes brought to life under light."
           </h2>
 

@@ -13,161 +13,108 @@ export default function Clients() {
 
   const clients: Client[] = [
     {
-      id: "dsoa",
-      name: "Dubai Silicon Oasis Authority",
+      id: "hayat",
+      name: "Hayat Market",
       logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <svg className="w-12 h-6 text-gold/80 mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 12">
-            <circle cx="4" cy="6" r="1.5" className="fill-gold/40" />
-            <circle cx="12" cy="3" r="1.5" className="fill-gold/40" />
-            <circle cx="12" cy="9" r="1.5" className="fill-gold/40" />
-            <circle cx="20" cy="6" r="1.5" className="fill-gold/40" />
-            <line x1="4" y1="6" x2="12" y2="3" strokeWidth="1" />
-            <line x1="4" y1="6" x2="12" y2="9" strokeWidth="1" />
-            <line x1="12" y1="3" x2="20" y2="6" strokeWidth="1" />
-            <line x1="12" y1="9" x2="20" y2="6" strokeWidth="1" />
-            <line x1="12" y1="3" x2="12" y2="9" strokeWidth="1" />
-          </svg>
-          <span className="text-[7px] text-white/80 font-semibold leading-tight font-sans">سلطة واحة دبي للسيليكون</span>
-          <span className="text-[5px] text-white/40 uppercase tracking-[0.1em]">Dubai Silicon Oasis Authority</span>
-        </div>
-      ),
-    },
-    {
-      id: "dubai",
-      name: "Dubai",
-      logo: (
-        <div className="flex items-center justify-center">
-          <span className="text-xl font-black tracking-tighter text-gold font-mono select-none">DU</span>
-          <span className="text-xl font-black tracking-tighter text-white/90 font-mono select-none">B</span>
-          <span className="text-xl font-black tracking-tighter text-gold font-mono select-none">A</span>
-          <span className="text-xl font-black tracking-tighter text-white/90 font-mono select-none">I</span>
-        </div>
-      ),
-    },
-    {
-      id: "dpg",
-      name: "Dubai Properties Group",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="grid grid-cols-2 gap-1 w-6 h-6 rotate-45 mb-1.5 mx-auto">
-            <div className="w-2.5 h-2.5 bg-gold"></div>
-            <div className="w-2.5 h-2.5 bg-gold/70"></div>
-            <div className="w-2.5 h-2.5 bg-gold/45"></div>
-            <div className="w-2.5 h-2.5 bg-gold/[0.15]"></div>
-          </div>
-          <span className="text-[7px] text-white/80 font-bold leading-none uppercase tracking-[0.05em]">Dubai Properties</span>
-          <span className="text-[5px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Group</span>
-        </div>
-      ),
-    },
-    {
-      id: "kaec",
-      name: "King Abdullah Economic City",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="flex items-end gap-0.5 mb-1 justify-center">
-            <div className="w-1.5 h-4 bg-gold"></div>
-            <div className="w-2.5 h-5 bg-gold/80 rounded-t-sm"></div>
-            <div className="w-1.5 h-3 bg-white/60"></div>
-            <div className="w-3 h-4 bg-white/30"></div>
-          </div>
-          <span className="text-[6px] text-white/90 font-extrabold leading-none">مدينة الملك عبدالله</span>
-          <span className="text-[5px] text-gold uppercase tracking-[0.05em] leading-none mt-0.5">Economic City</span>
-        </div>
-      ),
-    },
-    {
-      id: "meraas",
-      name: "Meraas",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <svg className="w-10 h-7 text-gold mb-1" fill="none" stroke="currentColor" strokeWidth="1.25" viewBox="0 0 24 16">
-            <path d="M4 14V2l8 8 8-8v12" />
-            <line x1="12" y1="10" x2="12" y2="15" />
-          </svg>
-          <span className="text-[8px] text-white/80 uppercase tracking-[0.3em] font-sans font-bold">Meraas</span>
-        </div>
-      ),
-    },
-    {
-      id: "moh",
-      name: "Ministry of Housing",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <svg className="w-8 h-8 text-gold mb-1" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" />
-            <path d="M12 22V12" />
-            <path d="M12 12l8-5M12 12L4 7" />
-            <circle cx="12" cy="12" r="3" className="fill-gold/10 text-gold" />
-          </svg>
-          <span className="text-[7px] text-white/95 font-extrabold leading-none">وزارة الإسكان</span>
-          <span className="text-[5px] text-white/40 uppercase tracking-wider mt-0.5">Ministry of Housing</span>
-        </div>
-      ),
-    },
-    {
-      id: "omniyat",
-      name: "Omniyat",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="relative font-sans text-xs font-black tracking-[0.18em] text-white">
-            OMNIYAT
-            <span className="absolute right-[1px] top-0 text-[5px] text-gold font-bold">•</span>
-          </div>
-          <span className="text-[4px] text-white/40 uppercase tracking-[0.4em] mt-0.5">The Art of Elevation</span>
-        </div>
-      ),
-    },
-    {
-      id: "rafal",
-      name: "Rafal",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="flex flex-col items-center leading-none mb-1">
-            <div className="w-4 h-0.5 bg-[#B88E52] mb-0.5 opacity-40"></div>
-            <div className="w-5 h-0.5 bg-[#B88E52] mb-0.5 opacity-60"></div>
-            <div className="w-6 h-0.5 bg-[#B88E52] mb-0.5 opacity-80"></div>
-            <div className="w-7 h-0.5 bg-[#B88E52]"></div>
-          </div>
-          <span className="text-[7px] text-[#B88E52] font-semibold tracking-widest leading-none">رافال</span>
-          <span className="text-[6px] text-white uppercase tracking-[0.2em] font-extrabold mt-0.5">Rafal</span>
-        </div>
-      ),
-    },
-    {
-      id: "wasl",
-      name: "Wasl",
-      logo: (
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="flex items-center gap-1">
-            <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18" />
-              <path d="M12 12m-6 0a6 6 0 1 0 12 0 6 6 0 1 0-12 0" />
+        <div className="flex flex-col items-center justify-center text-center w-[90px] h-[90px] bg-[#D12B27] rounded-full shadow-[inset_0_0_8px_rgba(0,0,0,0.5)] border border-[#b21c19]">
+          <div className="flex flex-col items-center justify-center -mt-1">
+            <svg className="w-5 h-5 text-[#86C13B] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 8C17 8 14 8 12 10C10 12 10 15 10 15C10 15 13 15 15 13C17 11 17 8 17 8Z"/>
             </svg>
-            <div className="flex flex-col items-start leading-none text-left">
-              <span className="text-[8px] text-gold font-bold leading-none">وصل</span>
-              <span className="text-[8px] text-white font-extrabold tracking-tight leading-none mt-0.5">wasl</span>
+            <span className="text-[20px] font-black tracking-tighter text-[#1C6835] leading-none font-sans transform scale-y-[1.3] drop-shadow-sm">HAYAT</span>
+            <span className="text-[12px] text-white font-serif italic leading-none mt-1.5">market</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "mhc",
+      name: "Mogadishu Health Cluster",
+      logo: (
+        <div className="flex items-center justify-center w-[150px] h-[150px] bg-white rounded-full p-2 border-[1px] border-gray-100 shadow-sm scale-75">
+          <div className="flex items-center gap-1.5">
+            {/* Heart/Tooth Logo */}
+            <div className="relative w-10 h-10 flex-shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                <path d="M12 21.5C12 21.5 4 16 4 9.5C4 6.5 6.5 4 9.5 4C11.5 4 12 6 12 6C12 6 12.5 4 14.5 4C17.5 4 20 6.5 20 9.5C20 16 12 21.5 12 21.5Z" stroke="#3598D4" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M8 21 L10 16 M16 21 L14 16" stroke="#255A9C" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
+            </div>
+            {/* Text */}
+            <div className="flex flex-col text-left border-l-[1.5px] border-[#2A8FCA]/30 pl-2">
+              <span className="text-[#1F5796] font-bold text-[10px] leading-tight font-sans tracking-tight">Mogadishu</span>
+              <span className="text-[#1F5796] font-bold text-[10px] leading-tight font-sans tracking-tight">Health Cluster</span>
+              <span className="text-[#1F5796] font-medium text-[8px] leading-tight font-sans mt-0.5">تجمع مقديشو الصحي</span>
             </div>
           </div>
         </div>
       ),
     },
     {
-      id: "emaar",
-      name: "Emaar",
+      id: "dahabshiil",
+      name: "Dahabshiil",
       logo: (
         <div className="flex flex-col items-center justify-center text-center">
-          <svg className="w-8 h-8 text-gold mb-1" fill="none" stroke="currentColor" strokeWidth="1.25" viewBox="0 0 24 24">
-            <path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" />
-            <circle cx="12" cy="12" r="3" className="fill-gold/10 text-gold" />
-            <polygon points="12,2 14,8 18,12 14,16 12,22 10,16 6,12 10,8" className="fill-gold text-transparent" />
-          </svg>
-          <span className="text-[8px] text-white uppercase tracking-[0.25em] font-black font-sans leading-none">Emaar</span>
+          <div className="relative pt-3">
+             <svg viewBox="0 0 120 30" fill="none" className="w-24 h-6 absolute top-0 left-1">
+                <path d="M 0 30 Q 60 -5 120 30" stroke="#3B9E35" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M 5 30 Q 60 0 115 30" stroke="#3B9E35" strokeWidth="1.5" strokeLinecap="round" />
+             </svg>
+             <div className="flex items-center gap-0 relative z-10 pt-1">
+               <div className="relative flex items-center">
+                 {/* Custom D with checkmark */}
+                 <svg viewBox="0 0 24 24" className="w-6 h-6">
+                   <path d="M4 2 L12 2 C18 2 20 8 20 12 C20 16 18 22 12 22 L4 22 Z" fill="white"/>
+                   <path d="M8 6 L12 6 C16 6 16 18 12 18 L8 18 Z" fill="#141414"/>
+                   {/* Checkmark crossing D */}
+                   <path d="M1 14 L7 20 L22 5 L18 3 L7 14 L4 11 Z" fill="#F0C808"/>
+                 </svg>
+                 <span className="text-xl font-bold text-white font-sans tracking-tight ml-[1px]">ahabshiil</span>
+               </div>
+             </div>
+          </div>
+          <span className="text-[7.5px] italic text-white font-medium mt-1 tracking-wider">your trusted financial partner</span>
         </div>
       ),
     },
+    {
+      id: "sombank",
+      name: "SOM BANK",
+      logo: (
+        <div className="flex flex-col items-center justify-center bg-white rounded-full w-[100px] h-[100px] border-[4px] border-[#DE2027]">
+          <div className="flex items-center -mt-1">
+            <div className="bg-[#263784] px-1.5 py-0.5 relative">
+              <div className="absolute top-[-5px] right-0 w-0 h-0 border-r-[8px] border-r-transparent border-b-[5px] border-b-[#E02127]"></div>
+              <span className="text-[12px] font-bold text-white font-sans tracking-wide">SOM</span>
+            </div>
+            <div className="text-[#E02127] pl-1 font-bold text-[14px] tracking-wide font-sans">
+              BANK
+            </div>
+          </div>
+          <span className="text-[#263784] text-[8px] font-bold mt-1 tracking-wide">Bank for all</span>
+        </div>
+      ),
+    },
+    {
+      id: "hormuud",
+      name: "Hormuud",
+      logo: (
+        <div className="flex items-center justify-center">
+          <img src="/hormuud-logo.jpg" alt="Hormuud Logo" className="h-[90px] w-auto object-contain rounded-lg shadow-sm" />
+        </div>
+      ),
+    },
+    {
+      id: "diamond",
+      name: "Diamond",
+      logo: (
+        <div className="flex items-center justify-center">
+          <img src="/diamond-logo.png" alt="Diamond Logo" className="h-[90px] w-auto object-contain" />
+        </div>
+      ),
+    }
   ];
+
 
   const handleScroll = (direction: "left" | "right") => {
     if (containerRef.current) {
@@ -197,10 +144,10 @@ export default function Clients() {
   }, []);
 
   return (
-    <section className="relative py-24 text-white overflow-hidden border-t border-[#151515] bg-[#0A0A0A]">
+    <section className="relative py-24 text-white overflow-hidden border-t border-[#151515] bg-transparent">
       {/* Organic Structural background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black z-10"></div>
+        <div className="absolute inset-0 bg-[#0d0906]/40 z-10"></div>
         <img
           src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80"
           alt="Parametric Architecture Backing"

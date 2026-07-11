@@ -134,11 +134,11 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 bg-[#0A0A0A] border-t border-gold/15 relative overflow-hidden"
+      className="py-24 bg-[#F5EDE0] border-t border-[#C58E5C]/15 relative overflow-hidden text-[#030303]"
       ref={sectionRef}
     >
       {/* Immersive Drafting Backdrop */}
-      <div className="absolute inset-0 draft-grid opacity-[0.10] pointer-events-none"></div>
+      <div className="absolute inset-0 draft-grid opacity-[0.05] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
@@ -147,11 +147,11 @@ export default function Services() {
             <span className="text-[11px] text-gold tracking-[0.3em] uppercase block mb-3 font-semibold">
               Our Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-white tracking-wide">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#030303] tracking-wide">
               Composing Elements
             </h2>
           </div>
-          <p className="text-sm text-gray-400 max-w-md font-sans font-light leading-relaxed">
+          <p className="text-sm text-gray-700 max-w-md font-sans font-light leading-relaxed">
             Through deliberate planning, interior architecture, and facade engineering, we establish exceptional structures tailored to premium requirements.
           </p>
         </div>
@@ -161,19 +161,19 @@ export default function Services() {
           {SERVICES_FULL.map((service) => (
             <div
               key={service.id}
-              className="fade-in-section service-card bg-[#141414] p-8 md:p-10 flex flex-col justify-between h-[360px] border border-gold/15 relative overflow-hidden rounded-xl group cursor-pointer"
+              className="fade-in-section service-card bg-white p-8 md:p-10 flex flex-col justify-between h-[360px] border border-[#C58E5C]/15 relative overflow-hidden rounded-xl group cursor-pointer shadow-sm hover:shadow-md transition-shadow"
               onClick={() =>
                 setActiveDetails(activeDetails === service.id ? null : service.id)
               }
             >
               <div className="relative z-10">
-                <div className="text-gold mb-6 transition-colors duration-300 group-hover:text-white">
+                <div className="text-[#C58E5C] mb-6 transition-colors duration-300 group-hover:text-[#030303]">
                   {getIcon(service.id)}
                 </div>
-                <h3 className="text-xl font-serif text-white font-medium mb-3">
+                <h3 className="text-xl font-display text-[#030303] font-semibold mb-3">
                   {service.title}
                 </h3>
-                <p className="text-xs text-gray-400 leading-relaxed font-sans font-light">
+                <p className="text-xs text-gray-600 leading-relaxed font-sans font-light">
                   {service.description}
                 </p>
 
@@ -185,13 +185,13 @@ export default function Services() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="pt-2 border-t border-[#333]/40 mt-2">
+                  <div className="pt-2 border-t border-gray-200 mt-2">
                     {service.details.map((detail, idx) => (
                       <div
                         key={idx}
-                        className="text-[11px] text-gray-400 flex items-center gap-2"
+                        className="text-[11px] text-gray-600 flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-[#C58E5C] rounded-full shrink-0"></span>
                         <span>{detail}</span>
                       </div>
                     ))}
@@ -199,12 +199,12 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="text-[10px] text-gold uppercase tracking-[0.15em] font-medium flex items-center justify-between relative z-10">
+              <div className="text-[10px] text-[#C58E5C] uppercase tracking-[0.15em] font-medium flex items-center justify-between relative z-10">
                 <div className="flex items-center gap-2">
                   <span>{getSubLabel(service.id)}</span>
-                  <span className="w-6 h-[1px] bg-gold/50"></span>
+                  <span className="w-6 h-[1px] bg-[#C58E5C]/50"></span>
                 </div>
-                <span className="text-[10px] font-mono text-gray-600 group-hover:text-gold transition-colors">
+                <span className="text-[10px] font-mono text-gray-500 group-hover:text-[#C58E5C] transition-colors">
                   {activeDetails === service.id ? "[Collapse]" : "[Enquire Details]"}
                 </span>
               </div>
