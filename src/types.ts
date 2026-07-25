@@ -14,4 +14,12 @@ export interface ProjectItem {
   year: string;
   location: string;
   details: string;
+  images?: string[];
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  imageUrl: string;
 }

@@ -76,6 +76,56 @@ export const SERVICES_FULL: ServiceItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
+    id: "marina-villa-project",
+    title: "Marina Villa Project",
+    subtitle: "A Heritage-Modern Fusion Residence",
+    category: "Architectural Design",
+    imageUrl: "/projects/marina-villa/marina-3.jpg",
+    year: "2026",
+    location: "Abdiaziz District, SO",
+    details: "Marina Villa Project is a masterpiece residential project located in the Abdiaziz District of Mogadishu, designed by Biyaano Architects. The villa presents a sophisticated blend of contemporary design features and the timeless, traditional Somali architectural styles that have historically defined the region's buildings. The layout incorporates elegant white arched openings, natural stone panels, custom metal entry gates, and brown bands that emphasize the building's geometric volumes while maintaining a high standard of modern spatial planning and structural luxury.",
+    images: [
+      "/projects/marina-villa/marina-3.jpg",
+      "/projects/marina-villa/marina-4.jpg",
+      "/projects/marina-villa/marina-1.png",
+      "/projects/marina-villa/marina-2.png",
+      "/projects/marina-villa/marina-5.jpg"
+    ]
+  },
+  {
+    id: "mogadishu-heights-tower",
+    title: "Mogadishu Heights Tower",
+    subtitle: "High-Rise Modern Living",
+    category: "Architectural Design",
+    imageUrl: "/projects/residential-tower/tower-1.jpg",
+    year: "2026",
+    location: "Mogadishu, SO",
+    details: "Mogadishu Heights Tower is a premium multi-storey residential building designed by Biyaano Architects to define the modern skyline of Mogadishu, Somalia. Featuring stacked balconies, clean horizontal facades, custom bronze accents, and large glass windows, the design optimizes natural lighting and ventilation for urban living. The ground floor houses boutique commercial shops, while the upper floors offer high-end apartments with panoramic views of the city.",
+    images: [
+      "/projects/residential-tower/tower-1.jpg",
+      "/projects/residential-tower/tower-2.jpg",
+      "/projects/residential-tower/tower-3.jpg",
+      "/projects/residential-tower/tower-4.jpg"
+    ]
+  },
+  {
+    id: "daru-salaam-villa",
+    title: "Daru Salaam Villa",
+    subtitle: "Modern Somali Cultural Residence",
+    category: "Architectural Design",
+    imageUrl: "/projects/daru-salaam-villa/villa-3.jpg",
+    year: "2026",
+    location: "Mogadishu, SO",
+    details: "Located in Daru Salaam, Mogadishu, this modern villa is designed by Biyaano Architects to seamlessly blend rich Somali cultural heritage with contemporary architectural forms. The design integrates traditional decorative screens and brick-pattern lattice shading with clean geometric volumes, natural stone walls, and manicured tropical landscaping. Featuring private courtyards, a sunken seating patio, illuminated concrete staircases, and seamless indoor-outdoor connections, the villa offers a peaceful and luxurious living environment that honors local identity.",
+    images: [
+      "/projects/daru-salaam-villa/villa-3.jpg",
+      "/projects/daru-salaam-villa/villa-1.jpg",
+      "/projects/daru-salaam-villa/villa-2.jpg",
+      "/projects/daru-salaam-villa/villa-4.jpg",
+      "/projects/daru-salaam-villa/villa-5.jpg"
+    ]
+  },
+  {
     id: "anaam-digital-printing",
     title: "Anaam Digital Printing Company",
     subtitle: "Modern Corporate Office & Branding Hub",

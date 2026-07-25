@@ -613,6 +613,45 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
       <!-- Projects Column Grid (3 Columns) -->
       <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+        <!-- Project: Marina Villa Project -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Marina Villa Project', 'Mogadishu, SO (2026)', '/projects/marina-villa/marina-3.jpg;/projects/marina-villa/marina-4.jpg;/projects/marina-villa/marina-1.png;/projects/marina-villa/marina-2.png;/projects/marina-villa/marina-5.jpg', 'Architectural Design', 'Marina Villa Project is a masterpiece residential project located in the Abdiaziz District of Mogadishu, designed by Biyaano Architects. The villa presents a sophisticated blend of contemporary design features and the timeless, traditional Somali architectural styles that have historically defined the region\\'s buildings. The layout incorporates elegant white arched openings, natural stone panels, custom metal entry gates, and brown bands that emphasize the building\\'s geometric volumes while maintaining a high standard of modern spatial planning and structural luxury.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/marina-villa/marina-3.jpg" alt="Marina Villa Project" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Marina Villa Project</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project: Mogadishu Heights Tower -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Mogadishu Heights Tower', 'Mogadishu, SO (2026)', '/projects/residential-tower/tower-1.jpg;/projects/residential-tower/tower-2.jpg;/projects/residential-tower/tower-3.jpg;/projects/residential-tower/tower-4.jpg', 'Architectural Design', 'Mogadishu Heights Tower is a premium multi-storey residential building designed by Biyaano Architects to define the modern skyline of Mogadishu, Somalia. Featuring stacked balconies, clean horizontal facades, custom bronze accents, and large glass windows, the design optimizes natural lighting and ventilation for urban living. The ground floor houses boutique commercial shops, while the upper floors offer high-end apartments with panoramic views of the city.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/residential-tower/tower-1.jpg" alt="Mogadishu Heights Tower" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Mogadishu Heights</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project: Daru Salaam Villa -->
+        <div class="project-item-card fade-in-section" data-category="architectural" onclick="openLightbox('Daru Salaam Villa', 'Mogadishu, SO (2026)', '/projects/daru-salaam-villa/villa-3.jpg;/projects/daru-salaam-villa/villa-1.jpg;/projects/daru-salaam-villa/villa-2.jpg;/projects/daru-salaam-villa/villa-4.jpg;/projects/daru-salaam-villa/villa-5.jpg', 'Architectural Design', 'Located in Daru Salaam, Mogadishu, this modern villa is designed by Biyaano Architects to seamlessly blend rich Somali cultural heritage with contemporary architectural forms. The design integrates traditional decorative screens and brick-pattern lattice shading with clean geometric volumes, natural stone walls, and manicured tropical landscaping. Featuring private courtyards, a sunken seating patio, illuminated concrete staircases, and seamless indoor-outdoor connections, the villa offers a peaceful and luxurious living environment that honors local identity.')">
+          <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
+            <img src="/projects/daru-salaam-villa/villa-3.jpg" alt="Daru Salaam Villa" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              <span class="text-[10px] text-gold uppercase tracking-[0.25em] mb-2 font-medium">Architectural Design</span>
+              <h4 class="text-white text-2xl font-serif font-light tracking-wide mb-1 transition-transform duration-500 translate-y-3 group-hover:translate-y-0">Daru Salaam Villa</h4>
+              <p class="text-[11px] text-gray-500 uppercase tracking-widest font-sans">Mogadishu, SO</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Project: Anaam Digital Printing Company -->
         <div class="project-item-card fade-in-section" data-category="interior" onclick="openLightbox('Anaam Digital Printing Company', 'Mogadishu, SO (2025)', '/projects/anaam-digital-printing/anaam-2.jpg;/projects/anaam-digital-printing/anaam-1.jpg;/projects/anaam-digital-printing/anaam-3.jpg;/projects/anaam-digital-printing/anaam-4.jpg', 'Interior &amp; Exterior Design', 'Anaam Digital Printing Company is a modern office and production space designed by Biyaano Architects, focusing on creating a clean, futuristic, and highly functional workspace. The interior features a striking visual identity centered around bold teal architectural lines, custom directional arrows representing progress and speed, and a sleek marble reception desk. Strategically integrated lighting and modern wood floors create an inviting waiting area, while integrated displays and clear branding convey a highly professional corporate image.')">
           <div class="relative overflow-hidden group cursor-pointer aspect-[4/3] bg-card-bg rounded-xl">
