@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A/digital — Web Design & AI Specialist</title>
+  <meta name="description"
+    content="High-end portfolio of a web designer and AI specialist. Crafting digital experiences that merge aesthetic precision with intelligent systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" id="nav-logo">
+        <span class="nav__logo-mark">A/</span>
+        <span>A/digital</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#ai" class="nav__link">AI Lab</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--primary nav__cta" id="nav-cta">Let's Build</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+
+    <div class="hero__content">
+      <div class="hero__label-row">
+        <span class="chip chip--ai">
+          <span class="chip__dot"></span>
+          Available for Projects
+        </span>
+      </div>
+
+      <h1 class="hero__headline">
+        <span class="hero__headline-sub">The Digital</span>
+        <span class="hero__headline-main reveal-text" id="hero-word">Architect</span>
+      </h1>
+
+      <p class="hero__body">
+        Designing interfaces that feel inevitable.<br />
+        Building AI systems that think alongside humans.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary" id="hero-cta-primary">View Selected Work</a>
+        <a href="#about" class="btn btn--secondary" id="hero-cta-secondary">My Approach</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint" id="scroll-hint">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>UI/UX Design</span><span class="marquee-dot">·</span>
+      <span>AI Products</span><span class="marquee-dot">·</span>
+      <span>Brand Systems</span><span class="marquee-dot">·</span>
+      <span>Web Apps</span><span class="marquee-dot">·</span>
+      <span>Design Strategy</span><span class="marquee-dot">·</span>
+      <span>Generative AI</span><span class="marquee-dot">·</span>
+      <span>UI/UX Design</span><span class="marquee-dot">·</span>
+      <span>AI Products</span><span class="marquee-dot">·</span>
+      <span>Brand Systems</span><span class="marquee-dot">·</span>
+      <span>Web Apps</span><span class="marquee-dot">·</span>
+      <span>Design Strategy</span><span class="marquee-dot">·</span>
+      <span>Generative AI</span><span class="marquee-dot">·</span>
+    </div>
+  </div>
+
+  <!-- ===== WORK / PORTFOLIO GRID ===== -->
+  <section class="section work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label label-accent">Selected Work</p>
+        <h2 class="section-title">Projects that <br /><em>define the craft</em></h2>
+      </div>
+
+      <div class="work-grid" id="work-grid">
+
+        <!-- Card 1 — Featured (full width) -->
+        <article class="card card--featured" id="card-nexus" data-tilt>
+          <div class="card__image" style="background: linear-gradient(135deg, #e9e6d5 0%, #f6f4ed 50%, #e9e6d5 100%);">
+            <div class="card__image-overlay">
+              <div class="card__mockup card__mockup--dashboard">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-sidebar"></div>
+                  <div class="mockup-main">
+                    <div class="mockup-chart"></div>
+                    <div class="mockup-grid">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__tags">
+              <span class="tag tag--purple">UI/UX Design</span>
+              <span class="tag tag--blue">SaaS</span>
+            </div>
+            <h3 class="card__title">Nexus Analytics Platform</h3>
+            <p class="card__desc">End-to-end redesign of a B2B analytics dashboard serving 40k+ teams. Reduced cognitive
+              load by 60% through information hierarchy restructuring.</p>
+            <a href="#" class="btn btn--tertiary" id="card-nexus-link">View Case Study →</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" id="card-orion" data-tilt>
+          <div class="card__image card__image--sm"
+            style="background: linear-gradient(135deg, #d8d3c0 0%, #e9e6d5 100%);">
+            <div class="card__image-overlay">
+              <div class="card__mockup card__mockup--mobile">
+                <div class="mockup-phone">
+                  <div class="mockup-screen">
+                    <div class="mockup-app-header"></div>
+                    <div class="mockup-app-content">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__tags">
+              <span class="tag tag--purple">Brand Design</span>
+              <span class="tag tag--purple">Mobile</span>
+            </div>
+            <h3 class="card__title">Orion Finance App</h3>
+            <p class="card__desc">Fintech mobile experience for Gen-Z investors. Dark-mode-first design with
+              micro-interaction animations.</p>
+            <a href="#" class="btn btn--tertiary" id="card-orion-link">View Case Study →</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" id="card-synapse" data-tilt>
+          <div class="card__image card__image--sm"
+            style="background: linear-gradient(135deg, #d0d7cf 0%, #e2e7e0 100%);">
+            <div class="card__image-overlay">
+              <div class="card__mockup card__mockup--orb">
+                <div class="mockup-orb">
+                  <div class="mockup-orb-ring ring-1"></div>
+                  <div class="mockup-orb-ring ring-2"></div>
+                  <div class="mockup-orb-ring ring-3"></div>
+                  <div class="mockup-orb-core"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__tags">
+              <span class="tag tag--blue">AI Integration</span>
+              <span class="tag tag--blue">Web App</span>
+            </div>
+            <h3 class="card__title">Synapse AI Assistant</h3>
+            <p class="card__desc">Conversational AI interface for enterprise knowledge management. Custom design system
+              + LLM integration.</p>
+            <a href="#" class="btn btn--tertiary" id="card-synapse-link">View Case Study →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI LAB ===== -->
+  <section class="section ai-lab" id="ai">
+    <div class="ai-lab__bg">
+      <div class="ai-lab__orb"></div>
+    </div>
+    <div class="container">
+      <div class="ai-lab__inner">
+        <div class="ai-lab__header">
+          <p class="section-label label-blue">AI Lab</p>
+          <h2 class="section-title section-title--light">Where intelligence <br /><em>meets interface</em></h2>
+          <p class="ai-lab__body">
+            I don't just design for AI — I engineer the experiences that make AI legible, trustworthy, and genuinely
+            useful to humans.
+          </p>
+        </div>
+
+        <div class="ai-features">
+          <div class="ai-feature" id="feat-1">
+            <div class="ai-feature__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="ai-feature__title">AI UX Architecture</h4>
+              <p class="ai-feature__desc">Designing trust frameworks, explainability layers, and error-state patterns
+                for machine learning interfaces.</p>
+            </div>
+          </div>
+          <div class="ai-feature" id="feat-2">
+            <div class="ai-feature__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="ai-feature__title">Generative UI Systems</h4>
+              <p class="ai-feature__desc">Building design systems that can dynamically adapt UI components based on
+                context and AI outputs.</p>
+            </div>
+          </div>
+          <div class="ai-feature" id="feat-3">
+            <div class="ai-feature__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="ai-feature__title">Prompt Engineering</h4>
+              <p class="ai-feature__desc">Crafting precision prompts and few-shot pipelines that turn raw LLM capability
+                into polished product experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row">
+        <div class="stat" id="stat-1">
+          <span class="stat__number" data-target="40">0</span><span class="stat__unit">+</span>
+          <p class="stat__label">Projects Shipped</p>
+        </div>
+        <div class="stat" id="stat-2">
+          <span class="stat__number" data-target="98">0</span><span class="stat__unit">%</span>
+          <p class="stat__label">Client Satisfaction</p>
+        </div>
+        <div class="stat" id="stat-3">
+          <span class="stat__number" data-target="5">0</span><span class="stat__unit">×</span>
+          <p class="stat__label">Avg. Engagement Lift</p>
+        </div>
+        <div class="stat" id="stat-4">
+          <span class="stat__number" data-target="12">0</span><span class="stat__unit">k+</span>
+          <p class="stat__label">Users Impacted</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section-label label-accent">About</p>
+          <h2 class="section-title">Design is a <br /><em>discipline,</em> <br />not a deliverable.</h2>
+          <p class="about__body">
+            I'm a web designer and AI specialist who believes that the most powerful interfaces are the ones users never
+            notice — because they simply <em>work</em>.
+          </p>
+          <p class="about__body">
+            My background spans brand identity, complex SaaS products, and emerging AI tooling. I operate at the
+            intersection of aesthetics and systems thinking.
+          </p>
+          <div class="about__chips">
+            <span class="chip chip--ai"><span class="chip__dot"></span>Live AI Integration</span>
+            <span class="chip chip--default">Figma</span>
+            <span class="chip chip--default">React</span>
+            <span class="chip chip--default">Python / LangChain</span>
+            <span class="chip chip--default">Design Systems</span>
+          </div>
+        </div>
+
+        <div class="about__visual">
+          <div class="about__card-stack">
+            <div class="about__card about__card--back"></div>
+            <div class="about__card about__card--mid"></div>
+            <div class="about__card about__card--front">
+              <div class="about__profile-avatar">
+                <div class="avatar-ring avatar-ring--1"></div>
+                <div class="avatar-ring avatar-ring--2"></div>
+                <div class="avatar-initials">JD</div>
+              </div>
+              <div class="about__profile-meta">
+                <p class="about__profile-name">J. Doe</p>
+                <p class="about__profile-role">Digital Architect</p>
+              </div>
+              <div class="about__profile-stats">
+                <div><strong>5yr+</strong><span>Experience</span></div>
+                <div><strong>40+</strong><span>Projects</span></div>
+                <div><strong>3</strong><span>Continents</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <p class="section-label label-accent">The Method</p>
+        <h2 class="section-title">Structured thinking, <br /><em>emergent creativity</em></h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" id="step-1">
+          <div class="process-step__number">01</div>
+          <div class="process-step__body">
+            <h4>Discovery & Research</h4>
+            <p>Deep-dive into the problem space. User interviews, competitive audit, constraint mapping.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step" id="step-2">
+          <div class="process-step__number">02</div>
+          <div class="process-step__body">
+            <h4>System Architecture</h4>
+            <p>Information architecture, component hierarchy, and design token foundations built before pixels.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step" id="step-3">
+          <div class="process-step__number">03</div>
+          <div class="process-step__body">
+            <h4>High-Fidelity Design</h4>
+            <p>Editorial layouts, motion principles, and glassmorphism systems brought to life in Figma.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step" id="step-4">
+          <div class="process-step__number">04</div>
+          <div class="process-step__body">
+            <h4>Engineering & Handoff</h4>
+            <p>Pixel-perfect implementation with full component documentation, design tokens, and QA sign-off.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__text">
+          <p class="section-label label-blue">Contact</p>
+          <h2 class="section-title">Let's build something<br /><em>that matters</em></h2>
+          <p class="contact__body">
+            Have a project in mind? I take on a limited number of collaborations per quarter to ensure every engagement
+            gets my full attention.
+          </p>
+          <div class="contact__links">
+            <a href="mailto:hello@adigital.studio" class="contact__social" id="link-email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              hello@adigital.studio
+            </a>
+            <a href="#" class="contact__social" id="link-twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 2a4.48 4.48 0 00-4.48 4.48c0 .35.04.7.1 1.02A12.76 12.76 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg>
+              @adigital_studio
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" class="form-input" placeholder="Alex Johnson" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-input" placeholder="alex@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="project" class="form-label">Project Type</label>
+            <select id="project" class="form-input form-select">
+              <option value="" disabled selected>Select a service…</option>
+              <option>UI/UX Design</option>
+              <option>AI Product Design</option>
+              <option>Design System</option>
+              <option>Full-Stack Build</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Tell Me About It</label>
+            <textarea id="message" class="form-input form-textarea"
+              placeholder="Describe your project, timeline, and goals…" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="form-submit">Send Message</button>
+          <p class="form-note">I typically respond within 24 hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="nav__logo-mark">A/</span>
+            <span>A/digital</span>
+          </a>
+          <p>Crafting digital experiences at the edge of design and intelligence.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h5>Work</h5>
+            <a href="#work">Portfolio</a>
+            <a href="#ai">AI Lab</a>
+          </div>
+          <div class="footer__col">
+            <h5>Studio</h5>
+            <a href="#about">About</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 A/digital. All rights reserved.</p>
+        <p>Designed with intention. Built with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#201f1f",
+              "tertiary": "#d7c4a5",
+              "secondary-container": "#474747",
+              "secondary": "#c8c6c5",
+              "on-primary": "#412d00",
+              "on-secondary-fixed-variant": "#474747",
+              "tertiary-container": "#b4a385",
+              "on-background": "#e5e2e1",
+              "surface": "#131313",
+              "on-error": "#690005",
+              "on-tertiary": "#3a2f19",
+              "on-primary-container": "#4e3700",
+              "background": "#131313",
+              "surface-container-highest": "#353534",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary": "#e9c176",
+              "surface-tint": "#e9c176",
+              "primary-fixed-dim": "#e9c176",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-fixed": "#f4e0c0",
+              "surface-dim": "#131313",
+              "inverse-primary": "#775a19",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface-variant": "#d1c5b4",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-tertiary-fixed": "#241a06",
+              "on-primary-fixed": "#261900",
+              "on-primary-fixed-variant": "#5d4201",
+              "outline-variant": "#4e4639",
+              "inverse-surface": "#e5e2e1",
+              "error-container": "#93000a",
+              "surface-variant": "#353534",
+              "primary-fixed": "#ffdea5",
+              "outline": "#9a8f80",
+              "inverse-on-surface": "#313030",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary-fixed-variant": "#52452d",
+              "on-secondary": "#303030",
+              "error": "#ffb4ab",
+              "on-secondary-container": "#b6b5b4",
+              "tertiary-fixed-dim": "#d7c4a5",
+              "primary-container": "#c5a059",
+              "on-tertiary-container": "#453922",
+              "surface-bright": "#3a3939",
+              "on-surface": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed": "#e4e2e1"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #0B0B0B;
+        color: #e5e2e1;
+      }
+      .tonal-shift { background-color: #111111; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0B0B0B]/70 backdrop-blur-xl bg-[#111111] shadow-[0_0_15px_rgba(245,210,122,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-4">
+<img alt="LASS LIGHTINGS" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhjDROlMBKM1yDIcv_mjfQkVGnCNZh3cFEmyTLEva8xvWDlOCfvjcEw__vNSkcmVtfKMwQNt9ZoQnicT3upCdqKqWruljfD8HoFk6g2TcT0-x9XF7_U9BktUD5P37fpon-29qrVwo2LYEvK5h_i-n-4AsoOHA24elcuss-jkMoJTJ7IwhXV0fxSQoeohFFMP5KrM71I1vjyafrlJDFwai7ur2BSz7luIYGhh1lTap04DV7Bz6g0_S_MXJp-94G5RIddwUm4YQk4FA"/>
+<span class="text-2xl font-bold tracking-[0.2em] text-[#F5D27A] uppercase font-['Noto_Serif']">LASS LIGHTINGS</span>
+</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Noto_Serif'] tracking-tighter uppercase text-sm text-[#F5D27A] font-bold border-b border-[#F5D27A] pb-1 transition-all duration-300" href="#">Home</a>
+<a class="font-['Noto_Serif'] tracking-tighter uppercase text-sm text-gray-400 hover:text-white transition-colors duration-300" href="#">Shop</a>
+<a class="font-['Noto_Serif'] tracking-tighter uppercase text-sm text-gray-400 hover:text-white transition-colors duration-300" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-tighter uppercase text-sm text-gray-400 hover:text-white transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#F5D27A] hover:text-[#F5D27A] transition-all duration-300 scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="md:hidden text-[#F5D27A]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center px-12 pt-20">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img class="w-full h-full object-cover opacity-40" data-alt="Ultra-modern architectural interior with dramatic lighting casting geometric shadows across a concrete floor at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpFMlox9BHGdYyl9isNWwNywpIYrfSYo4baRRr0TeOPnaLvekPOgebAuyY7hGYGu0nQEP1okVQC-1_YAscdBOy--W9GkNgST5u7iuwvdHyt5DJbvX2W2NIbmtoTfIUa605fd7wGyFBGR9LNh3gMNi3VBiMWQX4oKkADQmwYGNczyjxh31mNPV5GW38vHxIXoNWdz-x8bGWqf8rniIaE4c1iTvnIalJ6l6x1Ym3XY7emK5aw3Ih1I6NSk6lI-O7l2bUsUv6MDMsMtU"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto w-full grid grid-cols-12">
+<div class="col-span-12 md:col-span-8 lg:col-span-6 space-y-8">
+<span class="font-label text-primary tracking-[0.3em] uppercase text-sm block">Architectural Excellence</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white font-bold">
+                    Modern Lighting for Architectural Spaces
+                </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl font-light leading-relaxed">
+                    Sculpting environments through the precision of light. Discover our curated collection of technical luminaires and sculptural masterworks.
+                </p>
+<div class="pt-6">
+<button class="bg-primary text-on-primary px-10 py-5 font-label font-extrabold uppercase tracking-widest text-xs hover:shadow-[0_0_25px_rgba(233,193,118,0.4)] transition-all duration-500 flex items-center gap-4 group">
+                        Shop Collection
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-32 px-12 bg-[#0B0B0B]">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl text-white mb-4">Core Categories</h2>
+<div class="h-0.5 w-24 bg-primary"></div>
+</div>
+<a class="font-label text-primary uppercase tracking-widest text-xs hover:opacity-70 transition-opacity" href="#">Explore All</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Category 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist pendant light hanging in a stark gallery setting with strong top-down lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqyG2L3h9zo8FtBQjnw_Rr4IQFkqEHVDeG0zhPrNF9--5ZMBK2_W5f_ea30TT1G81olZkaDTTXVVSJf3vEE8h-bslJwJK1rvf0oa4bG4MR4X9LyVwIsIBAA5zF4OnVRvr-LHIZZxTe4FPr9oHoFLzOFWHl4_ofiRs_h_7PbqdeXkkLkIoPtA3ith9Gh_Nk-ORH4KD2Mud71tUg8y3O4jvD_SOFZ3Jy18kJu_ZbJc-alqgHf-7UgQRQvOrNBEkIJl0xPSOQSe05nwM"/>
+</div>
+<h3 class="font-headline text-white text-lg group-hover:text-primary transition-colors">Pendants</h3>
+<p class="text-xs font-label text-outline uppercase tracking-widest mt-1">12 Products</p>
+</div>
+<!-- Category 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern geometric floor lamp providing warm ambient glow in a dark concrete loft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQZae512UZ6LW6BMsf_z__OFO2_thjWKWo8uMkqBNelMKIybf3aoKIbqAcMcr19lxSSGhG-Dw-nhfhgyDD1Up10nVlp_rrysvYduquKMXHWIkuXMCgRZg1DB-JLiBkUXm6WFco9764q08ZcG-DoJqixIp2eDfhNEAIRq1lg9iF7LFBRzPH-fmP11PsG8NQ-eQi9jx0al3H9TDWuVWEwSFuJfRhNUHSxrab5dCYUaU2o7-h8RqmeLNgjRvi763PZSauLiH4LFMgiro"/>
+</div>
+<h3 class="font-headline text-white text-lg group-hover:text-primary transition-colors">Floor Lamps</h3>
+<p class="text-xs font-label text-outline uppercase tracking-widest mt-1">08 Products</p>
+</div>
+<!-- Category 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sleek architectural wall sconce with bi-directional light casting sharp shadows on textured surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-BpjBIgxbdFVqWf-kDPCJC9dKTu_ab0G-ZcOHQVImIUvH8AfqpRtSZLywBAonq-u2f74r2Gz9rkobIu62xQOnRXfZ-ONFQ4xk97VOx-w3VZovduQsQVP7vBqqnOmcIcDqBkuwgdW2ZEy8hOGUJcdEbGjTefP26mfX7JFvhnpKRjZo2bQ0mtl2sXoVWmv3RIy6zdDx5lkixKPyo5dY0rDugGlnnpr_iQbMGg9JbEX9CNtgH61XVC_UiWgNreA2Y0jrFWUShkejlCo"/>
+</div>
+<h3 class="font-headline text-white text-lg group-hover:text-primary transition-colors">Wall Sconces</h3>
+<p class="text-xs font-label text-outline uppercase tracking-widest mt-1">15 Products</p>
+</div>
+<!-- Category 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Professional track lighting system installed on a dark industrial ceiling highlighting art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuy_hAcZRjE8bCZ0jfLMWnDxKMG3mG0ShAID4kc8Vo5tN6NOrzfxNVtQgKvlSXejG_6KssPUl5Fp-ttpV5XY_M4OHoIiWeUAjaFqn4n80RGJRSYh7WVSuF5lKXWLg0_hHQCH7BIHKHWM-rkB_R0zGJdNALHZynkCSM0bLxHbI4Nq_Bd3k07p3JpZgKDhFkC9-2Gc2aKYDrf1KInSWIVLTP3pFRzjQUCq5quNIv1xs_SlblxWtTurX1MZG-AzDnv3suvohAcQMGI9A"/>
+</div>
+<h3 class="font-headline text-white text-lg group-hover:text-primary transition-colors">Technical</h3>
+<p class="text-xs font-label text-outline uppercase tracking-widest mt-1">22 Products</p>
+</div>
+<!-- Category 5 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Luxury sculptural chandelier with glass elements and golden accents in a modern foyer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzLwFzRFgyj_V-nfnEYx-rWsfOiTi0LDiO6P1aIu3jSt9en6oZvlAtzEUSQsEtuHrHJ-QK2XETJS-JNNcrMOGh_sKFCJYcroU5GQpW4PLJMEnnmvshyj5ySrujmdXvpdEjnTU86Yh9o2h48pWZjjZW_JSTDq6CSZA33eITR9gGLrp_5ybV8lC09H-mOaYzr-mQ2fFQz2qgKID9lGuNh8pypoceap48l0wwUJBDPqwyf_kBKJMN6oMyVTdIEoZXweWxE92K1etb4_s"/>
+</div>
+<h3 class="font-headline text-white text-lg group-hover:text-primary transition-colors">Showpiece</h3>
+<p class="text-xs font-label text-outline uppercase tracking-widest mt-1">05 Products</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Grid -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline text-5xl text-white mb-20 text-center">Masterworks</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="space-y-6">
+<div class="aspect-[4/5] bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-end minimalist table lamp with brass finish and warm light bulb" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS1rvr_9mBEIJ5zypjVEWow1A1WtwKmoNBPQxRLpxI00_CHCNyuvCUpKLPmmU6M7jkS4YDNrdnCL57f-fDOR4-mnfQ5A4IKvHSn_VP7QFGrqx-C_GunpvK-jE4wlDpntQ8MQ3WSYeJcS2L7z7tJD2XUUEhhDDh9K8MKi1k_owHCjcHYhB9DW5YlgUalr9scUAo9ZSCNj9ru05MiPnjcsrgsd8bzwSy4A4s45x8uffZgfnkeTY4m6QiVtBDwgGcBQjANsKC727E2gw"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-black px-6 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary transition-colors">View Detail</button>
+</div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline text-2xl text-white">Aurum Desk Luminaire</h3>
+<p class="font-label text-outline text-sm mt-1">Hand-Brushed Brass / Obsidian Base</p>
+</div>
+<span class="text-primary font-headline text-xl">$1,250</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="space-y-6 md:translate-y-20">
+<div class="aspect-[4/5] bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Oversized sculptural black metal pendant lamp hanging over a dark dining table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4MpP9U9uE3jNVn_pyxFZQg4NxrA4XGG8_Lm4tB0pw0Uudx4G-G4BiaBmxww63NYPhviGnlf-MASTv3AUGDMAjc_PGsqT0ZWTYMkfugXwc7s1xWksJdvadKVug_H-ClRshqaQrWStBrsIb5U_lNXbcsHgPYrO6DNFrJ_aSCfqm3fWMpWsEh5dWdK_gDvvG-hcQ7FFi68JAvjcrt8NDYTMvfDfnAym0FhXAc9zNuBVItGyZ43sdXOF6Hfzx1bpd_5-wE1f2fGrTls"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-black px-6 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary transition-colors">View Detail</button>
+</div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline text-2xl text-white">Eclipse Pendant</h3>
+<p class="font-label text-outline text-sm mt-1">Powder-Coated Steel / 120cm</p>
+</div>
+<span class="text-primary font-headline text-xl">$2,800</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="space-y-6">
+<div class="aspect-[4/5] bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Dramatic modern wall light casting a fan of light upwards on a grey stone wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8fpVH46zD_dMHUUK63CN8e0Y5LhVpaaP5S54Yi9S3heTEf8C8zed0ISBwHSTNg1ZxFh6PJgqpdehv020RT_Lfd2FsNc1yaNVhEUlqLnBVpB3e9eKMkeBSk2vbkQopKKvGRDINCq2UTGOHPo3IvBoUuKvPxlC5xs_a-sr-7uXPjei0vejmFropStdTB4uKEyZnHJMh-jKBzHPyTVyJNBz0axePznCGukZawVotP3uoftxk2JB5CpjVqTLuvoEiOwXIjpQ7ZX_5GWM"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-black px-6 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary transition-colors">View Detail</button>
+</div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline text-2xl text-white">Linear Flux Sconce</h3>
+<p class="font-label text-outline text-sm mt-1">Anodized Aluminum / Integrated LED</p>
+</div>
+<span class="text-primary font-headline text-xl">$850</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Architectural Split Layout -->
+<section class="py-32 grid grid-cols-1 lg:grid-cols-2 bg-[#0B0B0B]">
+<div class="flex items-center justify-center p-12 lg:p-32 order-2 lg:order-1">
+<div class="max-w-xl space-y-10">
+<span class="font-label text-primary tracking-[0.3em] uppercase text-xs">Our Philosophy</span>
+<h2 class="font-headline text-5xl md:text-6xl text-white leading-tight">Light is the Fourth Dimension</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">
+                    We believe that lighting is not an accessory, but a structural component of architecture. Our designs focus on how light interacts with materials, textures, and the human psyche, creating spaces that breathe and evolve throughout the day.
+                </p>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div>
+<h4 class="text-white font-headline text-xl mb-2">Sustainable</h4>
+<p class="text-outline text-sm">CRI 95+ LEDs with 50,000 hour lifespan.</p>
+</div>
+<div>
+<h4 class="text-white font-headline text-xl mb-2">Artisan</h4>
+<p class="text-outline text-sm">Hand-finished in our Milanese workshop.</p>
+</div>
+</div>
+<button class="border-b-2 border-primary text-primary font-label uppercase tracking-widest text-xs py-2 hover:opacity-70 transition-all">Read Studio Journal</button>
+</div>
+</div>
+<div class="min-h-[600px] order-1 lg:order-2">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Interior view of a high-end architectural studio with minimal furniture and dramatic overhead spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQAGpa-2L2Q5MdXbOw4V0H8AZffGsSJZ7ITUoZmC2Jh0oCCyUx9_2geH-kxxLBfDGQ3CbWephCLd4t33CRK6Bp-CVInsXvXu62qV9bm4_ta54SxzeyC1qT0mJTgJ6NzawTeCl3dXNrsyQHHq3tZQ46BGCqQNDDYUc0tkAAiPo94aPW1OyLpda8ltCzRiOIRLy3O529drxEnuGMFlnZWBXzX25P9tWGLXNAJMMVHI4A0xf1Awv8_-ihT4I27IqCkgGkLdDmmUIiYMg"/>
+</div>
+</section>
+<!-- Full-width Interior Showcase -->
+<section class="relative h-[819px] w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Full width view of a luxury penthouse living room at night with multiple warm light sources creating a cozy atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9-HrU7i4NE085Ftc3znc0A6pzo49Dq89WQ71hewsgJo3UnmfP7HTxuKqCXJ-fwUgbLtIusrnfByGAxYrByYVSWNYOw8XdPSzP--V2uZ34v2kXQHBSy-GNCojahE1JlgMnb_oKxp769QVffi6va9MfBaLzDP2mGy0JfHLuzt9emaXWz0UKlZtDxp8WpHCh_uYx8EAMino7pNuC413ihxdxrl-FUhEfxngxnsbw1TJMqgVc5lNdGltJ251upjcMOQjl-ZdMG8UeEeQ"/>
+<div class="absolute inset-0 bg-[#0B0B0B]/40 flex flex-col items-center justify-center text-center p-12">
+<h2 class="font-headline text-5xl md:text-7xl text-white mb-8 max-w-4xl italic">"Design is a plan for arranging elements in such a way as best to accomplish a particular purpose."</h2>
+<p class="font-label text-white uppercase tracking-[0.4em] text-sm">— Charles Eames</p>
+</div>
+</section>
+<!-- Dark CTA Section -->
+<section class="py-40 px-12 bg-surface-container-lowest text-center">
+<div class="max-w-4xl mx-auto space-y-12">
+<h2 class="font-headline text-5xl md:text-7xl text-white">Illuminate Your Vision</h2>
+<p class="text-on-surface-variant text-xl font-light">Collaborate with our design team for bespoke architectural lighting solutions tailored to your unique space.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center pt-8">
+<button class="bg-primary text-on-primary px-12 py-6 font-label font-bold uppercase tracking-widest text-xs hover:shadow-[0_0_30px_rgba(233,193,118,0.3)] transition-all">Request Consultation</button>
+<button class="border border-outline text-white px-12 py-6 font-label font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all">Download Catalog</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0B0B0B] w-full border-t border-[#4e4639]/20 tonal-shift from-[#111111] to-[#0B0B0B] flat no-shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="flex flex-col items-center md:items-start gap-6 mb-12 md:mb-0">
+<div class="flex items-center gap-4">
+<img alt="LASS LIGHTINGS" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhjDROlMBKM1yDIcv_mjfQkVGnCNZh3cFEmyTLEva8xvWDlOCfvjcEw__vNSkcmVtfKMwQNt9ZoQnicT3upCdqKqWruljfD8HoFk6g2TcT0-x9XF7_U9BktUD5P37fpon-29qrVwo2LYEvK5h_i-n-4AsoOHA24elcuss-jkMoJTJ7IwhXV0fxSQoeohFFMP5KrM71I1vjyafrlJDFwai7ur2BSz7luIYGhh1lTap04DV7Bz6g0_S_MXJp-94G5RIddwUm4YQk4FA"/>
+<span class="text-xl font-bold tracking-[0.2em] text-[#F5D27A] uppercase">LASS LIGHTINGS</span>
+</div>
+<p class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-[#F5D27A]">© 2024 ARCHITECTURA. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Home</a>
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Shop</a>
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">About</a>
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="font-['Manrope'] tracking-[0.15em] uppercase text-[10px] text-gray-500 hover:text-[#F5D27A] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

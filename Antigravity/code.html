@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>The Luminal Portfolio | Web Design &amp; AI Solutions</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#a3aac4",
+            "on-tertiary-container": "#59002a",
+            "error-dim": "#d73357",
+            "on-primary-fixed-variant": "#370086",
+            "inverse-primary": "#6e3bd7",
+            "surface": "#060e20",
+            "surface-container-lowest": "#000000",
+            "on-background": "#dee5ff",
+            "secondary": "#699cff",
+            "tertiary-container": "#fd81a8",
+            "background": "#060e20",
+            "primary-dim": "#8455ef",
+            "surface-container-high": "#141f38",
+            "outline-variant": "#40485d",
+            "on-primary": "#39008c",
+            "inverse-on-surface": "#4d556b",
+            "on-primary-container": "#2b006e",
+            "on-tertiary-fixed": "#380018",
+            "surface-tint": "#ba9eff",
+            "secondary-dim": "#699cff",
+            "surface-bright": "#1f2b49",
+            "primary": "#ba9eff",
+            "secondary-container": "#005ac2",
+            "surface-container-low": "#091328",
+            "primary-fixed-dim": "#a27cff",
+            "surface-container": "#0f1930",
+            "on-error": "#490013",
+            "tertiary-dim": "#f0779d",
+            "on-secondary": "#001e4a",
+            "surface-container-highest": "#192540",
+            "on-error-container": "#ffb2b9",
+            "on-secondary-fixed-variant": "#004da8",
+            "tertiary-fixed": "#ff8eb0",
+            "on-secondary-container": "#f7f7ff",
+            "on-tertiary": "#6a0934",
+            "error-container": "#a70138",
+            "primary-fixed": "#ae8dff",
+            "on-surface": "#dee5ff",
+            "on-primary-fixed": "#000000",
+            "on-tertiary-fixed-variant": "#701039",
+            "primary-container": "#ae8dff",
+            "outline": "#6d758c",
+            "error": "#ff6e84",
+            "secondary-fixed": "#bfd1ff",
+            "inverse-surface": "#faf8ff",
+            "tertiary": "#ff97b5",
+            "surface-variant": "#192540",
+            "surface-dim": "#060e20",
+            "tertiary-fixed-dim": "#f67ca3",
+            "secondary-fixed-dim": "#a9c4ff",
+            "on-secondary-fixed": "#003271"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(25, 37, 64, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ba9eff 0%, #8455ef 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ba9eff 0%, #8455ef 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 20px rgba(186, 158, 255, 0.3);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl">
+    <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+      <div class="text-xl font-bold tracking-tighter text-slate-100 font-headline">The Luminal Portfolio</div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a class="text-slate-300 hover:text-violet-300 transition-colors text-sm font-medium"
+          href="#services">Services</a>
+        <a class="text-slate-300 hover:text-violet-300 transition-colors text-sm font-medium"
+          href="#portfolio">Portfolio</a>
+        <a class="text-slate-300 hover:text-violet-300 transition-colors text-sm font-medium"
+          href="#process">Process</a>
+        <a class="text-slate-300 hover:text-violet-300 transition-colors text-sm font-medium" href="#about">About</a>
+        <a class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold text-sm btn-primary active:scale-95 transition-all"
+          href="#contact">Work With Me</a>
+      </div>
+      <button class="md:hidden text-on-surface">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px]">
+        </div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-bold uppercase tracking-widest mb-6">
+              <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+              Now Accepting New Projects
+            </span>
+            <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-6 leading-[1.1]">
+              I Design <span class="text-gradient">High-Converting</span> Websites &amp; AI Solutions
+            </h1>
+            <p class="text-on-surface-variant text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+              Helping creators, startups, and small businesses grow online with custom-built digital experiences and AI
+              automation.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a class="btn-primary text-on-primary px-8 py-4 rounded-xl font-bold text-center active:scale-95 transition-all"
+                href="#contact">Work With Me</a>
+              <a class="bg-surface-container-high text-on-surface px-8 py-4 rounded-xl font-bold text-center border border-outline-variant/20 hover:bg-surface-bright active:scale-95 transition-all"
+                href="#portfolio">View My Work</a>
+            </div>
+          </div>
+          <div class="hidden lg:block relative">
+            <div class="glass-panel rounded-3xl p-4 border border-outline-variant/15 relative overflow-hidden group">
+              <img alt="Abstract digital architectural rendering"
+                class="rounded-2xl w-full h-[500px] object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                data-alt="Modern abstract 3D digital architectural shapes"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6QJhELIlV7xSNa4gCxCs2kw0z1pCL7Gpn9Gnga49jnXR04kVMUKUSC0SXpkH4KHt7SbEzMykfUUnb2gvguZa7cQwdGN10b-zLMmxTeZ_QGDdoVOiO-uwMwQ1D6lh8ExrKq5CO-DCaywUjKzQoxcV8UUcHtlJKTOP18vPoU__yhd4ovAlT7xRMBHOTgarAawW2-Mx3Pas4bVjSTFdsfnW-6TGBDHRldXQPVUAA2qZI7cPDWV0gmNr3seVRicJbDJ9ECHRSM1OawxA" />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+              <div class="absolute bottom-8 left-8 right-8">
+                <div class="glass-panel p-6 rounded-2xl border border-white/5">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                    </div>
+                    <div class="font-headline font-bold">Intelligent Interface</div>
+                  </div>
+                  <div class="h-1 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+                    <div class="h-full bg-primary w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Me Section -->
+    <section class="py-32 bg-surface-container-low" id="about">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="relative inline-block">
+              <img alt="Professional portrait of a web designer"
+                class="rounded-3xl w-full max-w-md aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                data-alt="Close up professional portrait of a male designer"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI30eD_ZQS-hk-SZeQ1N1KWFVFT4xdiIIznfYAfcIat3bMHUBzE4OGiI6s70QlvBc-ufso23vsUFRLJPIjm4nsS8OJ8Kl5IJEUklFdYH3EJAKBQ87pFamA_Eoo7dKWN6tNKcEvq65WWri_kUJUmgGNCtGa-6j-aQcihfilwQ-gDA-piJwc8Czy28q5KMWkT-ulkZQyQapKBiNVrJeMQ6wOa2Eh89C2tGuggSWy8vLUTv46SZzGE2VlIT5qDi58SCs_Gg8mEkMMDrE" />
+              <div class="absolute -bottom-6 -right-6 glass-panel p-8 rounded-2xl border border-outline-variant/20">
+                <div class="text-4xl font-headline font-black text-primary">8+</div>
+                <div class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Years of Experience
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-4">The Architect</h2>
+            <h3 class="font-headline text-4xl md:text-5xl font-bold mb-8 leading-tight">Blending Design Precision with
+              AI Intelligence</h3>
+            <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+              <p>I specialize in building high-performance web applications that don't just look beautiful—they drive
+                results. My expertise spans the bridge between aesthetic frontend development and complex backend AI
+                integrations.</p>
+              <p>Whether you're a startup looking for a market-ready MVP or an established business needing to automate
+                repetitive workflows, I provide end-to-end digital solutions tailored to your unique scaling needs.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 mt-12">
+              <div>
+                <div class="text-on-surface font-bold text-xl mb-2">Web Design</div>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
+              </div>
+              <div>
+                <div class="text-on-surface font-bold text-xl mb-2">AI Integration</div>
+                <div class="w-12 h-1 bg-secondary rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-32 relative overflow-hidden" id="services">
+      <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Core Expertise</h2>
+          <p class="text-on-surface-variant text-lg">Purpose-built solutions designed to enhance your digital footprint
+            and operational efficiency.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="glass-panel p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+            </div>
+            <h4 class="font-headline text-xl font-bold mb-4">Website Design &amp; Development</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Modern, lightning-fast interfaces built for
+              the next generation of the web.</p>
+            <ul class="text-xs space-y-2 text-on-surface font-semibold">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Responsive
+                Layouts</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Performance
+                First</li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="glass-panel p-8 rounded-3xl border border-outline-variant/10 hover:border-secondary/40 transition-all duration-500 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary text-3xl">smart_toy</span>
+            </div>
+            <h4 class="font-headline text-xl font-bold mb-4">AI Automation Solutions</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Saving your business hundreds of hours with
+              custom intelligent agents and LLM integrations.</p>
+            <ul class="text-xs space-y-2 text-on-surface font-semibold">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Workflow
+                Automation</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Custom
+                Chatbots</li>
+            </ul>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="glass-panel p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+            </div>
+            <h4 class="font-headline text-xl font-bold mb-4">Landing Pages for Conversions</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Strategically optimized pages designed to
+              turn visitors into loyal customers.</p>
+            <ul class="text-xs space-y-2 text-on-surface font-semibold">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> A/B Testing
+                Ready</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> CTA
+                Optimization</li>
+            </ul>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="glass-panel p-8 rounded-3xl border border-outline-variant/10 hover:border-secondary/40 transition-all duration-500 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary text-3xl">rebase_edit</span>
+            </div>
+            <h4 class="font-headline text-xl font-bold mb-4">Notion &amp; Productivity</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Organizing digital workflows and building
+              custom operating systems for teams.</p>
+            <ul class="text-xs space-y-2 text-on-surface font-semibold">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Team
+                Dashboards</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> API
+                Automations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="py-32 bg-surface-container" id="portfolio">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div class="max-w-xl">
+            <h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Recent Works</h2>
+            <p class="text-on-surface-variant text-lg">A selection of projects where design meets technical excellence.
+            </p>
+          </div>
+          <div class="hidden md:block">
+            <span class="text-on-surface-variant text-sm font-bold uppercase tracking-widest">Selected Works
+              (2023-24)</span>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="group relative bg-surface-container-highest rounded-3xl overflow-hidden border border-outline-variant/10">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img alt="E-commerce Redesign Preview"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Modern minimalist e-commerce dashboard preview"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLCTxaQJcq7A7eyslY5iYV2cCE8mb99EdDcl7wPasNZNHCjHEOkK8sdjTYmb06J0gcz8pjGIr9bkXmXtdsSGrL2lQg94l_iyhDYSQMCd4uco_kSsz1tUFFbvUMy3w36XEeqqn3MZX6IsteiZCou9slXiXe9qBMbGnNOgWs1TQLQb3_axa8fioa1T5YogjDkNV5zIhQYEckbvb6p8rRbjT7jddLZUUlf-cc2wpY9YXA6WpLWy4I9uaPJAXaFKtSOwHREr-fxczODk0" />
+            </div>
+            <div class="p-8">
+              <div class="text-primary text-xs font-bold uppercase tracking-widest mb-3">UI/UX Design</div>
+              <h5 class="font-headline text-2xl font-bold mb-3">E-commerce Redesign</h5>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Modernized a luxury retail platform, resulting
+                in a 40% increase in checkout completions.</p>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="group relative bg-surface-container-highest rounded-3xl overflow-hidden border border-outline-variant/10">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img alt="AI Chatbot Interface"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Digital representation of an AI neural network and interface"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcROPiB4LOd3tKSN4vEKtbz8wEa4RtF8OHA9T8l_CHRJeunS6d44UNoMUkMYMQdf7JaYYtzbTyEDB0nWGiI9pi4f1MmVmmkbIJt6o9CBWSqUeOZjZBH2_6XzGEXCLelI4pob28DjMpIL1GJUr5415LVyNPWSz6Tlno5TWfflmmTBqiFLvTkp2G9xfYlYivH_HzNDxjzq-L0jioc7jeYa5AIT1hZSUroBNdOrQXLpW2bBtk2u4j_6VCErU_kAIfgz6Klk7_5GSXCF0" />
+            </div>
+            <div class="p-8">
+              <div class="text-secondary text-xs font-bold uppercase tracking-widest mb-3">AI Integration</div>
+              <h5 class="font-headline text-2xl font-bold mb-3">AI Chatbot Integration</h5>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Developed a custom LLM-powered support agent
+                for a SaaS provider, reducing ticket volume by 65%.</p>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="group relative bg-surface-container-highest rounded-3xl overflow-hidden border border-outline-variant/10">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img alt="Startup Landing Page"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Sleek high-tech software landing page presentation"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1HWinWFFo3y9krO_5ggfx-Xp9rhenSWdcIfpf3HGzp6k2T9QWDpyWWPWmk1T7KO9F_cczG64pK9YsmkWwS87cGmiD2q9xfHi0uBWW7sAhLCRLyTd-cuFUmlp-ZyhnvqKVX3q36H2mydNc_e0rMJhw44sdTB7Dn0-C9ORt2MFq6AHFGWz6e0SXlu67YbuQ4v4kQWdN9XlSXTrIWKo51_HDTwNLtdmVL79fskgA1p0uNE1ol94KH7Hv9QXjzSbbn_o6bdlZ2So8GMo" />
+            </div>
+            <div class="p-8">
+              <div class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Conversion Strategy</div>
+              <h5 class="font-headline text-2xl font-bold mb-3">Startup Landing Page</h5>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Designed a high-impact launch page for a
+                Fintech venture that secured $2M in seed funding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-32" id="process">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-24">
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6">Simple, Scalable Process</h2>
+          <p class="text-on-surface-variant max-w-2xl mx-auto">From the first call to the final hand-off, I ensure
+            transparency and precision at every stage.</p>
+        </div>
+        <div class="relative">
+          <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/10 -translate-y-1/2 z-0">
+          </div>
+          <div class="grid lg:grid-cols-4 gap-12 relative z-10">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center font-headline font-black text-2xl mb-8 group hover:border-primary transition-all">
+                01
+              </div>
+              <h6 class="font-headline font-bold text-xl mb-3">Discovery</h6>
+              <p class="text-on-surface-variant text-sm px-4">Deep dive into your brand goals, user pain points, and
+                technical requirements.</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center font-headline font-black text-2xl mb-8 group hover:border-secondary transition-all">
+                02
+              </div>
+              <h6 class="font-headline font-bold text-xl mb-3">Design</h6>
+              <p class="text-on-surface-variant text-sm px-4">Crafting high-fidelity prototypes and visual systems that
+                align with your identity.</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center font-headline font-black text-2xl mb-8 group hover:border-primary transition-all">
+                03
+              </div>
+              <h6 class="font-headline font-bold text-xl mb-3">Development</h6>
+              <p class="text-on-surface-variant text-sm px-4">Bringing designs to life with clean code and robust AI
+                integrations.</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center font-headline font-black text-2xl mb-8 group hover:border-secondary transition-all">
+                04
+              </div>
+              <h6 class="font-headline font-bold text-xl mb-3">Delivery</h6>
+              <p class="text-on-surface-variant text-sm px-4">Final launch, optimization, and ongoing maintenance to
+                ensure peak performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-32 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="p-10 rounded-3xl bg-surface border border-outline-variant/10 flex flex-col justify-between">
+            <div class="mb-8">
+              <div class="flex text-primary mb-6">
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+              </div>
+              <p class="text-on-surface italic text-lg leading-relaxed">"The AI automation integration saved us over 20
+                hours a week. Truly game-changing for our small team."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+                <img alt="Client testimonial headshot" class="w-full h-full object-cover"
+                  data-alt="Professional headshot of a female entrepreneur"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYH1aV69TajM2JDZZTuSqeLjwIZ6MUw8qpzo7mdlx6MbjymWIV5llD6WLCaVtV-VIdVgh7B4rbm_hrTfwaOiz2oauBIeEWHpE4OexcoEfVMyQw_159k2028WS4kFTlBnKKyNSaWGjifRFknBZeo-Xopd3nYDQywnODHuzbd6E4VSUBgQMWOPzf3TOlNd6dI8l7EEfbUi6TX4vQoVSGrDabVAoaR3MGbo9-dqM9XzIhoEUKVjFU7-XLdX2IttpDvkyuYFGxGVct-nM" />
+              </div>
+              <div>
+                <div class="font-bold">Sarah Jenkins</div>
+                <div class="text-xs text-on-surface-variant uppercase tracking-widest">Founder, Nova Tech</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 rounded-3xl bg-surface border border-outline-variant/10 flex flex-col justify-between">
+            <div class="mb-8">
+              <div class="flex text-primary mb-6">
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+              </div>
+              <p class="text-on-surface italic text-lg leading-relaxed">"A designer who actually understands business
+                goals. Our landing page conversion jumped by 30% in month one."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+                <img alt="Client testimonial headshot" class="w-full h-full object-cover"
+                  data-alt="Professional headshot of a male business executive"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3YrTpT1d4uDzMii6tKyRcQp4O9uWe7vgZDVrcnpA2c5EuWk8JXGu6tM_G1PQhDcJG-03Rvf7J_6YqMmJbR3dLeQ94wsb9-D-DTCYiKwwpEfjwt8vvyXMNley_vUOKIG_O6lhRqldrtFSErL9HX-J_uUswA0OQIsDZBl7z9hPmkxgmbuuxutuojhZSVYHo2cbMxxlKONaDrLm1DB95Fp7f4LAVNgA8ztfeQ39dswfmwnh28Hm4YUFfRwWdp8Sw4-Bx7bN-gkzhe8A" />
+              </div>
+              <div>
+                <div class="font-bold">Mark Thompson</div>
+                <div class="text-xs text-on-surface-variant uppercase tracking-widest">CEO, Zenith Collective</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 rounded-3xl bg-surface border border-outline-variant/10 flex flex-col justify-between">
+            <div class="mb-8">
+              <div class="flex text-primary mb-6">
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+                <span class="material-symbols-outlined fill-1">star</span>
+              </div>
+              <p class="text-on-surface italic text-lg leading-relaxed">"Excellent communication and incredible
+                technical skills. The transition from design to live site was seamless."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+                <img alt="Client testimonial headshot" class="w-full h-full object-cover"
+                  data-alt="Professional headshot of a young female creative"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkEVBYtdpbl6bOQmpt8UwvOIA8h3CPcrqeMWauEHV0ThwUBh1BFzVXAtI6EUyYh9iZKvovMLn0KzgiXEYVpj50OPt59jmO9vG1aqBVYBgkm573kbnLU5UgqTiZmvMRTS8J4qDj-8vSsHbSUqBZOxkwFMWDFVK2y-CR77dzsdB8nLPowLlhtTtp3UPjCTiXNfG2JWCQCvvAypVleblK_d6m087hYZakUAeyNuzkCmEKe_HLjTk1sz_bV__9x5fo_WTz241C-ftNxOs" />
+              </div>
+              <div>
+                <div class="font-bold">Elena Rodriguez</div>
+                <div class="text-xs text-on-surface-variant uppercase tracking-widest">Design Lead, Flux Media</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA & Contact Section -->
+    <section class="py-32 relative" id="contact">
+      <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="glass-panel p-12 lg:p-20 rounded-[3rem] border border-outline-variant/15 overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-8 tracking-tighter">Let's build something
+                <span class="text-gradient">powerful</span> together</h2>
+              <p class="text-on-surface-variant text-lg mb-12">Ready to elevate your digital presence or automate your
+                business? Fill out the form or reach out directly.</p>
+              <div class="space-y-6">
+                <a class="flex items-center gap-4 text-on-surface hover:text-primary transition-colors group"
+                  href="mailto:hello@luminalportfolio.com">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined">mail</span>
+                  </div>
+                  <span class="text-lg font-medium">hello@luminalportfolio.com</span>
+                </a>
+                <a class="flex items-center gap-4 text-on-surface hover:text-secondary transition-colors group"
+                  href="#">
+                  <div
+                    class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined">chat_bubble</span>
+                  </div>
+                  <span class="text-lg font-medium">WhatsApp: +1 (555) 000-0000</span>
+                </a>
+              </div>
+            </div>
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Name</label>
+                  <input
+                    class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-secondary focus:ring-0 transition-all px-0 py-4 text-on-surface"
+                    placeholder="Your Name" type="text" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Email</label>
+                  <input
+                    class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-secondary focus:ring-0 transition-all px-0 py-4 text-on-surface"
+                    placeholder="your@email.com" type="email" />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Project
+                  Interest</label>
+                <select
+                  class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-secondary focus:ring-0 transition-all px-0 py-4 text-on-surface">
+                  <option>Website Design &amp; Dev</option>
+                  <option>AI Automation Solution</option>
+                  <option>Landing Page Optimization</option>
+                  <option>Other / Not Sure</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Message</label>
+                <textarea
+                  class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-secondary focus:ring-0 transition-all px-0 py-4 text-on-surface resize-none"
+                  placeholder="Tell me about your project..." rows="4"></textarea>
+              </div>
+              <button
+                class="w-full btn-primary text-on-primary font-bold py-5 rounded-xl uppercase tracking-widest active:scale-[0.98] transition-all"
+                type="submit">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-slate-950">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 py-20 max-w-7xl mx-auto">
+      <div>
+        <div class="text-lg font-black text-slate-200 font-headline mb-6">The Luminal Portfolio</div>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-xs">Elevating digital standards through human-centric
+          design and technical intelligence.</p>
+      </div>
+      <div>
+        <h6 class="text-violet-500 font-bold uppercase tracking-widest text-xs mb-8">Navigation</h6>
+        <div class="grid grid-cols-2 gap-4">
+          <a class="text-slate-400 hover:text-violet-300 transition-all text-sm" href="#services">Services</a>
+          <a class="text-slate-400 hover:text-violet-300 transition-all text-sm" href="#portfolio">Portfolio</a>
+          <a class="text-slate-400 hover:text-violet-300 transition-all text-sm" href="#process">Process</a>
+          <a class="text-slate-400 hover:text-violet-300 transition-all text-sm" href="#about">About</a>
+        </div>
+      </div>
+      <div>
+        <h6 class="text-violet-500 font-bold uppercase tracking-widest text-xs mb-8">Social</h6>
+        <div class="flex gap-6">
+          <a class="text-slate-400 hover:text-violet-300 transition-all" href="#"><span
+              class="material-symbols-outlined">language</span></a>
+          <a class="text-slate-400 hover:text-violet-300 transition-all" href="#"><span
+              class="material-symbols-outlined">person</span></a>
+          <a class="text-slate-400 hover:text-violet-300 transition-all" href="#"><span
+              class="material-symbols-outlined">work</span></a>
+        </div>
+        <div class="mt-8 pt-8 border-t border-slate-800/50">
+          <p class="text-slate-500 text-xs">© 2024 The Luminal Portfolio. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
