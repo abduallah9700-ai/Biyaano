@@ -87,7 +87,13 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              onClick={() => onSelectProject(project)}
+              onClick={() => {
+                if (project.externalLink) {
+                  window.open(project.externalLink, "_blank", "noopener,noreferrer");
+                } else {
+                  onSelectProject(project);
+                }
+              }}
               className="fade-in-section group cursor-pointer overflow-hidden bg-white border border-[#C58E5C]/15 rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="relative overflow-hidden aspect-[4/3] w-full rounded-t-xl">
@@ -97,6 +103,13 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
+
+                {/* 360° badge for virtual tour projects */}
+                {project.externalLink && (
+                  <div className="absolute top-3 right-3 bg-black/80 text-[#C58E5C] text-[10px] font-sans font-semibold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full border border-[#C58E5C]/40 backdrop-blur-sm z-10">
+                    360° Tour
+                  </div>
+                )}
 
                 {/* Dark overlay showing title in white and category in bronze on hover */}
                 <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
@@ -109,6 +122,11 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
                   <p className="text-[11px] text-gray-500 uppercase tracking-widest font-sans">
                     {project.subtitle}
                   </p>
+                  {project.externalLink && (
+                    <p className="text-[10px] text-[#C58E5C] mt-3 tracking-widest font-sans uppercase">
+                      Click to explore →
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

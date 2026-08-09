@@ -57,6 +57,12 @@ export default function Navbar({ onOpenExport }: NavbarProps) {
             Projects
           </a>
           <a
+            href="#tours360"
+            className="text-[10px] font-sans tracking-[0.25em] font-medium text-[#C58E5C] uppercase relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-gold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 transition-colors hover:text-white"
+          >
+            360° Tours
+          </a>
+          <a
             href="#about"
             className="text-[10px] font-sans tracking-[0.25em] font-medium text-white uppercase relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-gold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 transition-colors hover:text-gold"
           >
@@ -115,6 +121,13 @@ export default function Navbar({ onOpenExport }: NavbarProps) {
           className="text-xl font-sans tracking-[0.2em] text-white uppercase hover:text-gold transition-colors"
         >
           Projects
+        </a>
+        <a
+          href="#tours360"
+          onClick={() => setIsOpen(false)}
+          className="text-xl font-sans tracking-[0.2em] text-[#C58E5C] uppercase hover:text-white transition-colors"
+        >
+          360° Tours
         </a>
         <a
           href="#about"

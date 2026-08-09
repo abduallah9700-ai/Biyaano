@@ -74,6 +74,117 @@ export const SERVICES_FULL: ServiceItem[] = [
   }
 ];
 
+export const PROJECTS_360: ProjectItem[] = [
+  {
+    id: "mu-cluster",
+    title: "MU Health Cluster",
+    subtitle: "360° Virtual Tour — Healthcare & University Complex",
+    category: "Architectural Design",
+    imageUrl: "/projects/mu-cluster/mu-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Comprehensive 360° virtual walkthrough of MU Health Cluster. Features ground floor reception, administrative areas, medical spaces, and exterior architectural design.",
+    images: ["/projects/mu-cluster/mu-1.jpg"],
+    externalLink: "https://arch-hussein.github.io/MU-CLUSTER/"
+  },
+  {
+    id: "sombank-360",
+    title: "SomBank Headquarters",
+    subtitle: "360° Virtual Tour — Modern Financial Facility",
+    category: "Interior Design",
+    imageUrl: "/projects/sombank-360/sombank-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Immersive 360° virtual experience of SomBank Headquarters. Explore the banking halls, customer reception zones, executive suites, and corporate interior architecture.",
+    images: ["/projects/sombank-360/sombank-1.jpg"],
+    externalLink: "https://arch-hussein.github.io/sombank111/"
+  },
+  {
+    id: "biyano-office-360",
+    title: "Biyaano Studio Office",
+    subtitle: "360° Virtual Tour — Architectural Studio & HQ",
+    category: "Interior Design",
+    imageUrl: "/projects/biyano-office-360/biyano-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Official 360° virtual tour of Biyaano Architects design studio and headquarters. Step inside our creative environment, meeting rooms, and spatial planning workshop.",
+    images: ["/projects/biyano-office-360/biyano-1.jpg"],
+    externalLink: "https://huseynmohameda.github.io/biyano-office/"
+  },
+  {
+    id: "nasiye-studio",
+    title: "Nasiye Studio",
+    subtitle: "360° Virtual Tour — Media & Creative Studio",
+    category: "Interior Design",
+    imageUrl: "/projects/nasiye-studio/nasiye-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Interactive 360° tour of Nasiye Studio workspace. Features creative media production setups, modern interior lighting, acoustic paneling, and lounge layout.",
+    images: ["/projects/nasiye-studio/nasiye-1.jpg"],
+    externalLink: "https://huseynmohameda.github.io/Nasiye-Studio/"
+  },
+  {
+    id: "masrax-ceo-office-wcs",
+    title: "MASRAX Executive Suite WCS",
+    subtitle: "360° Virtual Tour — Executive Suite & Lounge",
+    category: "Interior Design",
+    imageUrl: "/projects/masrax-ceo-office-wcs/masrax-wcs-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Full 360° virtual walkthrough of the MASRAX CEO Executive Suite WCS edition. Designed with luxury modern executive furnishings, private lounge, and ambient acoustic interior.",
+    images: ["/projects/masrax-ceo-office-wcs/masrax-wcs-1.jpg"],
+    externalLink: "https://huseynmohameda.github.io/MASRAX-CEO-OFFICE-Wcs"
+  },
+  {
+    id: "dbi-project",
+    title: "DBI Project",
+    subtitle: "360° Virtual Tour — Commercial & Institute Facility",
+    category: "Interior Design",
+    imageUrl: "/projects/dbi-project/dbi-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Interactive 360° virtual tour of the DBI Project facility. Experience the reception, recovery areas, and administrative zones through immersive panoramic views.",
+    images: ["/projects/dbi-project/dbi-1.jpg"],
+    externalLink: "https://arch-hussein.github.io/DBI/"
+  },
+  {
+    id: "alamtara-360",
+    title: "Alamtara 360",
+    subtitle: "360° Panoramic Virtual Tour — Commercial Complex",
+    category: "Architectural Design",
+    imageUrl: "/projects/alamtara-360/alamtara-1.jpg",
+    year: "2025",
+    location: "Mogadishu, SO",
+    details: "Comprehensive 360° virtual walkthrough of Alamtara Complex. Explore external street views, reception halls, corridors, and exterior architectural features.",
+    images: ["/projects/alamtara-360/alamtara-1.jpg"],
+    externalLink: "https://arch-hussein.github.io/ALAMATRA360/"
+  },
+  {
+    id: "dhusamareb-landscape",
+    title: "Dhusamareb Landscape",
+    subtitle: "360° Virtual Tour — Landscape & Park Design",
+    category: "Landscape Design",
+    imageUrl: "/projects/dhusamareb-landscape/dhusamareb-1.jpg",
+    year: "2025",
+    location: "Dhusamareb, SO",
+    details: "Immersive 360° landscape design tour in Dhusamareb. Features traditional dining huts, garden pathways, park entrances, and outdoor recreational spatial planning.",
+    images: ["/projects/dhusamareb-landscape/dhusamareb-1.jpg"],
+    externalLink: "https://xamar728-max.github.io/dhusmareb-landescape/"
+  },
+  {
+    id: "masrax-ceo-office",
+    title: "MASRAX CEO Office",
+    subtitle: "360° Virtual Tour — Executive Office Design",
+    category: "Interior Design",
+    imageUrl: "/projects/masrax-ceo-office/masrax-1.jpg",
+    year: "2024",
+    location: "Mogadishu, SO",
+    details: "A luxury executive office designed for MASRAX, featuring a full 360° panoramic virtual tour. The space blends modern corporate aesthetics with refined Somali design sensibilities — premium materials, ambient lighting, and a spatial flow crafted to convey authority, focus, and sophistication. Explore every corner of this immersive interior through the interactive 360° tour.",
+    images: ["/projects/masrax-ceo-office/masrax-1.jpg"],
+    externalLink: "https://huseynmohameda.github.io/MASRAX-CEO-OFFICE-/"
+  }
+];
+
 export const PROJECTS: ProjectItem[] = [
   {
     id: "marina-villa-project",

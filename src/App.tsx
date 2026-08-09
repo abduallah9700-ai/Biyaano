@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
+import VirtualTours360 from "./components/VirtualTours360";
 import Clients from "./components/Clients";
 import Lightbox from "./components/Lightbox";
 import About from "./components/About";
@@ -67,6 +68,9 @@ export default function App() {
 
       {/* 4. Filterable Projects Gallery */}
       <Projects onSelectProject={(project) => setSelectedProject(project)} />
+
+      {/* 4b. Dedicated 360° Virtual Tours Section */}
+      <VirtualTours360 />
 
       {/* 5. About Strip */}
       <About />

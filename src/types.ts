@@ -15,6 +15,7 @@ export interface ProjectItem {
   location: string;
   details: string;
   images?: string[];
+  externalLink?: string;
 }
 
 export interface TeamMember {
