@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Mail, Phone, MapPin, Instagram, Youtube } from "lucide-react";
 import TiktokIcon from "./TiktokIcon";
 

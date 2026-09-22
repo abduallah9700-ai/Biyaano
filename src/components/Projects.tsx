@@ -3,10 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { ProjectItem } from "../types";
 
 interface ProjectsProps {
+  projects?: ProjectItem[];
   onSelectProject: (project: ProjectItem) => void;
 }
 
-export default function Projects({ onSelectProject }: ProjectsProps) {
+export default function Projects({ projects = PROJECTS, onSelectProject }: ProjectsProps) {
   const [filter, setFilter] = useState<string>("all");
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +29,7 @@ export default function Projects({ onSelectProject }: ProjectsProps) {
     return () => observer.disconnect();
   }, [filter]); // re-run of observer is perfect when layouts shift!
 
-  const filteredProjects = PROJECTS.filter((proj) => {
+  const filteredProjects = projects.filter((proj) => {
     if (filter === "all") return true;
     if (filter === "architectural") return proj.category === "Architectural Design" || proj.category === "3D Visualization";
     if (filter === "interior") return proj.category.includes("Interior");

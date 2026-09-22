@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { TEAM_MEMBERS } from "../data/portfolioData";
 
 export default function TeamMembers() {
-  const sectionRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

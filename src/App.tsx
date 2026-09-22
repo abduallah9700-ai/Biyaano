@@ -10,52 +10,168 @@ import About from "./components/About";
 import TeamMembers from "./components/TeamMembers";
 import Contact from "./components/Contact";
 import ExportModal from "./components/ExportModal";
-import { PROJECTS } from "./data/portfolioData";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import { useProjects } from "./hooks/useProjects";
 import { ProjectItem } from "./types";
-import { Instagram, Youtube } from "lucide-react";
+import { Instagram, Youtube, Lock } from "lucide-react";
 import TiktokIcon from "./components/TiktokIcon";
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [isExportOpen, setIsExportOpen] = useState(false);
+  const [isAdminView, setIsAdminView] = useState(false);
+  const [adminToken, setAdminToken] = useState<string | null>(() => {
+    const token = localStorage.getItem("biyaano_admin_token");
+    if (!token || token === "null" || token === "undefined" || token.trim() === "") return null;
+    return token;
+  });
+  const [adminUsername, setAdminUsername] = useState<string>(() => {
+    return localStorage.getItem("biyaano_admin_user") || "admin";
+  });
 
-  // Smooth scroll configuration
+  const {
+    projects,
+    projects360,
+    isBackendConnected,
+    fetchProjects,
+    addProject,
+    updateProject,
+    deleteProject,
+    uploadImage,
+  } = useProjects();
+
+  // Sync hash changes (#admin) with isAdminView
   useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (this: HTMLAnchorElement, e: Event) {
+    const handleHashChange = () => {
+      setIsAdminView(window.location.hash === "#admin");
+    };
+
+    setIsAdminView(window.location.hash === "#admin");
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // Smooth scroll configuration for standard hash links
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a[href^="#"]');
+      if (!target) return;
+      const targetId = target.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+      if (targetId === "#admin") {
         e.preventDefault();
-        const targetId = this.getAttribute("href");
-        if (!targetId || targetId === "#") return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      });
-    });
+        window.location.hash = "#admin";
+        setIsAdminView(true);
+        return;
+      }
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
   }, []);
 
   // Handle Lightbox cycles
   const handlePrevProject = () => {
     if (!selectedProject) return;
-    const currentIndex = PROJECTS.findIndex((p) => p.id === selectedProject.id);
-    const prevIndex = (currentIndex - 1 + PROJECTS.length) % PROJECTS.length;
-    setSelectedProject(PROJECTS[prevIndex]);
+    const currentIndex = (projects || []).findIndex((p) => p.id === selectedProject.id);
+    if (currentIndex !== -1 && projects.length > 0) {
+      const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
+      setSelectedProject(projects[prevIndex]);
+    }
   };
 
   const handleNextProject = () => {
     if (!selectedProject) return;
-    const currentIndex = PROJECTS.findIndex((p) => p.id === selectedProject.id);
-    const nextIndex = (currentIndex + 1) % PROJECTS.length;
-    setSelectedProject(PROJECTS[nextIndex]);
+    const currentIndex = (projects || []).findIndex((p) => p.id === selectedProject.id);
+    if (currentIndex !== -1 && projects.length > 0) {
+      const nextIndex = (currentIndex + 1) % projects.length;
+      setSelectedProject(projects[nextIndex]);
+    }
   };
+
+  const handleLoginSuccess = (token: string, username: string) => {
+    setAdminToken(token);
+    setAdminUsername(username);
+    setIsAdminView(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("biyaano_admin_token");
+    localStorage.removeItem("biyaano_admin_user");
+    setAdminToken(null);
+    setIsAdminView(false);
+    window.location.hash = "";
+  };
+
+  const openAdmin = () => {
+    window.location.hash = "#admin";
+    setIsAdminView(true);
+  };
+
+  // Render Admin View if active
+  if (isAdminView) {
+    if (!adminToken) {
+      return (
+        <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#C58E5C] selection:text-black flex items-center justify-center relative p-4">
+          <div className="absolute inset-0 draft-grid opacity-[0.05] pointer-events-none" />
+          <AdminLogin
+            onLoginSuccess={handleLoginSuccess}
+            onClose={() => {
+              setIsAdminView(false);
+              window.location.hash = "";
+            }}
+          />
+        </div>
+      );
+    }
+
+    return (
+      <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#C58E5C] selection:text-black antialiased relative overflow-x-hidden">
+        <AdminDashboard
+          token={adminToken}
+          username={adminUsername}
+          projects={projects || []}
+          projects360={projects360 || []}
+          isBackendConnected={isBackendConnected}
+          onLogout={handleLogout}
+          onAddProject={async (type, proj) => {
+            await addProject(type, proj, adminToken);
+          }}
+          onUpdateProject={async (type, proj) => {
+            await updateProject(type, proj, adminToken);
+          }}
+          onDeleteProject={async (id) => {
+            await deleteProject(id, adminToken);
+          }}
+          onUploadImage={async (file) => {
+            return await uploadImage(file, adminToken);
+          }}
+          onRefresh={fetchProjects}
+          onBackToSite={() => {
+            setIsAdminView(false);
+            window.location.hash = "";
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#C58E5C] selection:text-black antialiased relative overflow-x-hidden">
       {/* 1. Sticky Nav bar */}
-      <Navbar onOpenExport={() => setIsExportOpen(true)} />
+      <Navbar
+        onOpenExport={() => setIsExportOpen(true)}
+        onOpenAdmin={openAdmin}
+      />
 
       {/* 2. Hero viewport */}
       <Hero />
@@ -67,10 +183,13 @@ export default function App() {
       <Clients />
 
       {/* 4. Filterable Projects Gallery */}
-      <Projects onSelectProject={(project) => setSelectedProject(project)} />
+      <Projects
+        projects={projects}
+        onSelectProject={(project) => setSelectedProject(project)}
+      />
 
       {/* 4b. Dedicated 360° Virtual Tours Section */}
-      <VirtualTours360 />
+      <VirtualTours360 projects360={projects360} />
 
       {/* 5. About Strip */}
       <About />
@@ -117,7 +236,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <a href="#hero" className="hover:text-gold transition-colors duration-300">
               Home
             </a>
@@ -127,12 +246,16 @@ export default function App() {
             <a href="#projects" className="hover:text-gold transition-colors duration-300">
               Spaces
             </a>
-            <a href="#team" className="hover:text-gold transition-colors duration-300">
-              Team
+            <a href="#tours360" className="hover:text-gold transition-colors duration-300">
+              360 Tours
             </a>
-            <a href="#contact" className="hover:text-gold transition-colors duration-300 font-semibold text-gold">
-              Enquiries
-            </a>
+            <button
+              onClick={openAdmin}
+              className="text-[#C58E5C] hover:text-white transition-colors duration-300 font-semibold flex items-center gap-1 cursor-pointer"
+            >
+              <Lock className="w-3 h-3" />
+              <span>Admin</span>
+            </button>
           </div>
         </div>
       </footer>

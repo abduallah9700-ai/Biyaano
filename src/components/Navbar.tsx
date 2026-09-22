@@ -3,9 +3,10 @@ import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onOpenExport?: () => void;
+  onOpenAdmin?: () => void;
 }
 
-export default function Navbar({ onOpenExport }: NavbarProps) {
+export default function Navbar({ onOpenExport: _onOpenExport, onOpenAdmin }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -80,6 +81,15 @@ export default function Navbar({ onOpenExport }: NavbarProps) {
           >
             Contact
           </a>
+
+          {onOpenAdmin && (
+            <button
+              onClick={onOpenAdmin}
+              className="text-[10px] font-sans tracking-[0.25em] font-semibold text-[#C58E5C] hover:text-white uppercase py-1.5 px-3 rounded-full border border-[#C58E5C]/40 hover:bg-[#C58E5C] hover:border-[#C58E5C] hover:text-black transition-all duration-300 cursor-pointer"
+            >
+              Admin Portal
+            </button>
+          )}
 
         </div>
 

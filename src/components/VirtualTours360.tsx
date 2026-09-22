@@ -1,11 +1,20 @@
 import { useEffect, useRef } from "react";
 import { PROJECTS_360 } from "../data/portfolioData";
 import { ExternalLink, Compass } from "lucide-react";
+import { ProjectItem } from "../types";
 
-export default function VirtualTours360() {
+interface VirtualTours360Props {
+  projects360?: ProjectItem[];
+}
+
+export default function VirtualTours360({ projects360 = PROJECTS_360 }: VirtualTours360Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Immediately make all children visible on mount to prevent hidden elements
+    const children = sectionRef.current?.querySelectorAll(".fade-in-section");
+    children?.forEach((child) => child.classList.add("is-visible"));
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -14,14 +23,14 @@ export default function VirtualTours360() {
           }
         });
       },
-      { threshold: 0.05 }
+      { threshold: 0.01 }
     );
 
-    const children = sectionRef.current?.querySelectorAll(".fade-in-section");
     children?.forEach((child) => observer.observe(child));
-
     return () => observer.disconnect();
   }, []);
+
+  const tourList = projects360 || PROJECTS_360;
 
   return (
     <section
@@ -52,7 +61,7 @@ export default function VirtualTours360() {
 
         {/* 360° Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS_360.map((project) => (
+          {tourList.map((project) => (
             <div
               key={project.id}
               onClick={() => {
@@ -69,6 +78,9 @@ export default function VirtualTours360() {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/logo.png';
+                  }}
                 />
                 
                 {/* Vignette Overlay */}

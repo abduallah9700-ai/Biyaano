@@ -13,10 +13,12 @@
 }
 
 /* Custom scrollbar and luxury styling */
-html {
+html, body {
   scroll-behavior: smooth;
   background-color: #030303;
   color: #FFFFFF;
+  margin: 0;
+  padding: 0;
 }
 
 .bg-custom-gradient {
@@ -35,6 +37,15 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #B8864E;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Custom styles for IntersectionObserver fade-in */
@@ -70,10 +81,6 @@ html {
 .grid-divider {
   background-color: rgba(184, 134, 78, 0.15);
 }
-
-
-
-/* ── Soft section-to-section transitions ── */
 
 /* Dark section: fades into the light section below/above */
 .section-fade-dark {
@@ -120,4 +127,3 @@ html {
   pointer-events: none;
   z-index: 1;
 }
-

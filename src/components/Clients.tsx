@@ -8,7 +8,7 @@ interface Client {
 }
 
 export default function Clients() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [_scrollPosition, setScrollPosition] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const clients: Client[] = [
