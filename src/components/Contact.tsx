@@ -72,7 +72,7 @@ export default function Contact() {
               Email Coordinates
             </h4>
             <p className="text-xs text-gray-600 hover:text-[#030303] transition-colors duration-300">
-              <a href="mailto:atelier@biyaano.com" className="hover:underline">atelier@biyaano.com</a>
+              <a href="mailto:biyaano.architects.official@gmail.com" className="hover:underline">biyaano.architects.official@gmail.com</a>
             </p>
           </div>
 

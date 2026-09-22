@@ -898,7 +898,7 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
               </span>
               <div>
                 <h4 class="text-xs uppercase text-gold tracking-widest mb-1">Email Coordinates</h4>
-                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="mailto:atelier@biyaano.com">atelier@biyaano.com</a></p>
+                <p class="text-xs text-gray-400 hover:text-white transition-colors"><a href="mailto:biyaano.architects.official@gmail.com">biyaano.architects.official@gmail.com</a></p>
               </div>
             </div>
 
