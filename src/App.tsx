@@ -16,6 +16,8 @@ import { useProjects } from "./hooks/useProjects";
 import { ProjectItem } from "./types";
 import { Instagram, Youtube, Lock } from "lucide-react";
 import TiktokIcon from "./components/TiktokIcon";
+import WhatsappIcon from "./components/WhatsappIcon";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -206,9 +208,18 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
             <img src="/logo.png" alt="Biyaano Architects" className="w-[120px] h-auto drop-shadow-sm opacity-80" />
             <span>© 2026 Biyaano Architects</span>
-            <div className="flex gap-4 border-t sm:border-t-0 sm:border-l border-[#222] pt-4 sm:pt-0 sm:pl-6">
+            <div className="flex gap-4 border-t sm:border-t-0 sm:border-l border-[#222] pt-4 sm:pt-0 sm:pl-6 items-center">
               <a
-                href="https://instagram.com"
+                href="https://wa.me/252612536518?text=Hello%20Biyaano%20Architects%2C%20I%20would%20like%20to%20inquire%20about%20your%20architectural%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-[#25D366] transition-colors duration-300"
+                title="WhatsApp"
+              >
+                <WhatsappIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/biyaano.architects?stkn=MWM4emRsdWh1aDVyNA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gold transition-colors duration-300"
@@ -217,7 +228,7 @@ export default function App() {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@biyaano_architects?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gold transition-colors duration-300"
@@ -226,10 +237,10 @@ export default function App() {
                 <TiktokIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@biyaanoarchitects-t1f?si=vLJPOq1OFaCzjs1Y"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gold transition-colors duration-300"
+                className="text-gray-500 hover:text-[#FF0000] transition-colors duration-300"
                 title="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -259,6 +270,9 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Instant WhatsApp Inquiry Action */}
+      <FloatingWhatsApp />
 
       {/* Luxurious Image Lightbox Frame */}
       <Lightbox

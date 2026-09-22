@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Mail, Phone, MapPin, Instagram, Youtube } from "lucide-react";
 import TiktokIcon from "./TiktokIcon";
+import WhatsappIcon from "./WhatsappIcon";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -86,6 +87,16 @@ export default function Contact() {
             <p className="text-xs text-gray-600 hover:text-[#030303] transition-colors duration-300">
               <a href="tel:+252612536518" className="hover:underline">+252-612536518</a>
             </p>
+            <a
+              href="https://wa.me/252612536518?text=Hello%20Biyaano%20Architects%2C%20I%20would%20like%20to%20inquire%20about%20your%20architectural%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366] text-[#128C7E] hover:text-white border border-[#25D366]/30 text-[11px] font-medium transition-all duration-300 shadow-sm"
+              title="Chat on WhatsApp"
+            >
+              <WhatsappIcon className="w-3.5 h-3.5" />
+              <span>WhatsApp Direct</span>
+            </a>
           </div>
         </div>
 
@@ -94,33 +105,49 @@ export default function Contact() {
           <h4 className="text-[10px] uppercase text-[#C58E5C] tracking-[0.25em] font-semibold mb-6">
             Digital Ateliers
           </h4>
-          <div className="flex gap-5">
+          <div className="flex gap-4 sm:gap-5 flex-wrap justify-center">
+            {/* WhatsApp */}
             <a
-              href="https://instagram.com"
+              href="https://wa.me/252612536518?text=Hello%20Biyaano%20Architects%2C%20I%20would%20like%20to%20inquire%20about%20your%20architectural%20services."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#C58E5C] hover:border-[#C58E5C] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm"
+              className="text-gray-500 hover:text-[#25D366] hover:border-[#25D366] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm group"
+              title="Chat on WhatsApp"
+            >
+              <WhatsappIcon className="w-4 h-4 transition-transform group-hover:scale-110" />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/biyaano.architects?stkn=MWM4emRsdWh1aDVyNA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-[#C58E5C] hover:border-[#C58E5C] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm group"
               title="Instagram"
             >
-              <Instagram className="w-4 h-4 stroke-[1.5]" />
+              <Instagram className="w-4 h-4 stroke-[1.5] transition-transform group-hover:scale-110" />
             </a>
+
+            {/* TikTok */}
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@biyaano_architects?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#C58E5C] hover:border-[#C58E5C] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm"
+              className="text-gray-500 hover:text-[#C58E5C] hover:border-[#C58E5C] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm group"
               title="TikTok"
             >
-              <TiktokIcon className="w-4 h-4 stroke-[1.5]" />
+              <TiktokIcon className="w-4 h-4 stroke-[1.5] transition-transform group-hover:scale-110" />
             </a>
+
+            {/* YouTube */}
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@biyaanoarchitects-t1f?si=vLJPOq1OFaCzjs1Y"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#C58E5C] hover:border-[#C58E5C] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm"
+              className="text-gray-500 hover:text-[#FF0000] hover:border-[#FF0000] transition-all duration-300 w-11 h-11 border border-gray-300 flex items-center justify-center bg-white rounded-xl shadow-sm group"
               title="YouTube"
             >
-              <Youtube className="w-4 h-4 stroke-[1.5]" />
+              <Youtube className="w-4 h-4 stroke-[1.5] transition-transform group-hover:scale-110" />
             </a>
           </div>
         </div>

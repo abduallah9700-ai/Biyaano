@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Youtube } from "lucide-react";
+import TiktokIcon from "./TiktokIcon";
+import WhatsappIcon from "./WhatsappIcon";
 
 interface NavbarProps {
   onOpenExport?: () => void;
@@ -161,7 +163,46 @@ export default function Navbar({ onOpenExport: _onOpenExport, onOpenAdmin }: Nav
           Contact
         </a>
 
-        <div className="mt-2 text-[11px] text-gray-500 uppercase tracking-widest flex flex-col gap-2">
+        <div className="flex gap-4 pt-4 border-t border-[#222]">
+          <a
+            href="https://wa.me/252612536518?text=Hello%20Biyaano%20Architects%2C%20I%20would%20like%20to%20inquire%20about%20your%20architectural%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#25D366] transition-colors p-1.5 rounded-lg border border-[#222] bg-[#141414]"
+            title="WhatsApp"
+          >
+            <WhatsappIcon className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.instagram.com/biyaano.architects?stkn=MWM4emRsdWh1aDVyNA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-gold transition-colors p-1.5 rounded-lg border border-[#222] bg-[#141414]"
+            title="Instagram"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@biyaano_architects?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-gold transition-colors p-1.5 rounded-lg border border-[#222] bg-[#141414]"
+            title="TikTok"
+          >
+            <TiktokIcon className="w-4 h-4" />
+          </a>
+          <a
+            href="https://youtube.com/@biyaanoarchitects-t1f?si=vLJPOq1OFaCzjs1Y"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#FF0000] transition-colors p-1.5 rounded-lg border border-[#222] bg-[#141414]"
+            title="YouTube"
+          >
+            <Youtube className="w-4 h-4" />
+          </a>
+        </div>
+
+        <div className="mt-1 text-[11px] text-gray-500 uppercase tracking-widest flex flex-col gap-1">
           <span>© 2026 Biyaano Architects</span>
           <span>Mogadishu • Taleex-KM4</span>
         </div>
