@@ -798,30 +798,7 @@ export const STANDALONE_HTML = `<!DOCTYPE html>
       </div>
 
       <!-- Team Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-
-        <!-- Member 1: Abdiwahab Ibrahim Ahmed -->
-        <div class="fade-in-section group text-center">
-          <div class="relative overflow-hidden mb-6 mx-auto" style="width:100%;max-width:320px;aspect-ratio:3/4;">
-            <!-- Gold border frame -->
-            <div class="absolute inset-0 border border-[#2a2a2a] group-hover:border-gold transition-colors duration-700 z-10 pointer-events-none"></div>
-            <!-- Corner accents -->
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <!-- Photo -->
-            <img src="/team/abdiwahab.jpg" alt="Abdiwahab Ibrahim Ahmed" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
-            <!-- Subtle gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
-          </div>
-          <!-- Info -->
-          <div class="mt-2">
-            <div class="w-6 h-px bg-gold mx-auto mb-4 opacity-60"></div>
-            <span class="text-[10px] text-gold uppercase tracking-[0.35em] block mb-2">Architect</span>
-            <h3 class="text-white font-serif font-light text-xl tracking-wide">Abdiwahab Ibrahim Ahmed</h3>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-12 lg:gap-16">
 
         <!-- Member 2: Abdikani Hussein Omar -->
         <div class="fade-in-section group text-center">

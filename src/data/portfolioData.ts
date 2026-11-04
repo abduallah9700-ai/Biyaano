@@ -371,12 +371,6 @@ export const PROJECTS: ProjectItem[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: "abdiwahab-ibrahim-ahmed",
-    name: "Abdiwahab Ibrahim Ahmed",
-    title: "Architect",
-    imageUrl: "/team/abdiwahab.jpg",
-  },
-  {
     id: "abdikani-hussein-omar",
     name: "Abdikani Hussein Omar",
     title: "Architect",
